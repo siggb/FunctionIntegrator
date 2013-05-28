@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RootViewController.h"
 
-@interface ViewController : UIViewController
+#import "DemoData.h"
+
+@interface ViewController : RootViewController
+
+@property (nonatomic, weak) IBOutlet WSChart *chart;
 
 @end

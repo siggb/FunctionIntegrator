@@ -18,6 +18,52 @@
 		586EF03517556E28007CB143 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 586EF03417556E28007CB143 /* Default-568h@2x.png */; };
 		586EF03817556E28007CB143 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF03717556E28007CB143 /* ViewController.m */; };
 		586EF03B17556E28007CB143 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 586EF03917556E28007CB143 /* ViewController.xib */; };
+		586EF0AB17556EA7007CB143 /* NAArrow.c in Sources */ = {isa = PBXBuildFile; fileRef = 586EF04417556EA6007CB143 /* NAArrow.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0AC17556EA7007CB143 /* NABezierControlPoints.c in Sources */ = {isa = PBXBuildFile; fileRef = 586EF04717556EA6007CB143 /* NABezierControlPoints.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0AD17556EA7007CB143 /* NADashing.c in Sources */ = {isa = PBXBuildFile; fileRef = 586EF04917556EA6007CB143 /* NADashing.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0AE17556EA7007CB143 /* NALineIntersection.c in Sources */ = {isa = PBXBuildFile; fileRef = 586EF04B17556EA6007CB143 /* NALineIntersection.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0AF17556EA7007CB143 /* NALineRectangleIntersection.c in Sources */ = {isa = PBXBuildFile; fileRef = 586EF04D17556EA6007CB143 /* NALineRectangleIntersection.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0B017556EA7007CB143 /* NASymbol.c in Sources */ = {isa = PBXBuildFile; fileRef = 586EF05017556EA6007CB143 /* NASymbol.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0B117556EA7007CB143 /* WSAxisLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF05517556EA6007CB143 /* WSAxisLocation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0B217556EA7007CB143 /* WSAxisProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF05817556EA6007CB143 /* WSAxisProperties.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0B317556EA7007CB143 /* WSBarPlotFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF05A17556EA6007CB143 /* WSBarPlotFactory.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0B417556EA7007CB143 /* WSBarProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF05C17556EA6007CB143 /* WSBarProperties.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0B517556EA7007CB143 /* WSBinning.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF05E17556EA6007CB143 /* WSBinning.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0B617556EA7007CB143 /* WSChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF06017556EA6007CB143 /* WSChart.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0B717556EA7007CB143 /* WSChartAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF06217556EA6007CB143 /* WSChartAnimation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0B817556EA7007CB143 /* WSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF06517556EA6007CB143 /* WSColor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0B917556EA7007CB143 /* WSColorScheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF06717556EA6007CB143 /* WSColorScheme.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0BA17556EA7007CB143 /* WSConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF06917556EA6007CB143 /* WSConnection.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0BB17556EA7007CB143 /* WSContour.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF06C17556EA6007CB143 /* WSContour.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0BC17556EA7007CB143 /* WSCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF06F17556EA6007CB143 /* WSCoordinate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0BD17556EA7007CB143 /* WSCustomProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF07417556EA6007CB143 /* WSCustomProperties.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0BE17556EA7007CB143 /* WSData.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF07617556EA6007CB143 /* WSData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0BF17556EA7007CB143 /* WSDataOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF07917556EA6007CB143 /* WSDataOperations.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0C017556EA7007CB143 /* WSDataPointProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF07B17556EA6007CB143 /* WSDataPointProperties.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0C117556EA7007CB143 /* WSDatum.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF07D17556EA6007CB143 /* WSDatum.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0C217556EA7007CB143 /* WSDiscProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF08017556EA6007CB143 /* WSDiscProperties.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0C317556EA7007CB143 /* WSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF08217556EA6007CB143 /* WSFont.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0C417556EA7007CB143 /* WSGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF08417556EA6007CB143 /* WSGraph.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0C517556EA7007CB143 /* WSGraphConnections.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF08617556EA6007CB143 /* WSGraphConnections.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0C617556EA7007CB143 /* WSGraphPlotFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF08817556EA6007CB143 /* WSGraphPlotFactory.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0C717556EA7007CB143 /* WSLinePlotFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF08A17556EA6007CB143 /* WSLinePlotFactory.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0C817556EA7007CB143 /* WSNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF08C17556EA6007CB143 /* WSNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0C917556EA7007CB143 /* WSNodeProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF08E17556EA6007CB143 /* WSNodeProperties.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0CA17556EA7007CB143 /* WSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF09017556EA6007CB143 /* WSObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0CB17556EA7007CB143 /* WSPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF09217556EA7007CB143 /* WSPlot.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0CC17556EA7007CB143 /* WSPlotAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF09417556EA7007CB143 /* WSPlotAxis.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0CD17556EA7007CB143 /* WSPlotBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF09617556EA7007CB143 /* WSPlotBar.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0CE17556EA7007CB143 /* WSPlotController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF09817556EA7007CB143 /* WSPlotController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0CF17556EA7007CB143 /* WSPlotData.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF09A17556EA7007CB143 /* WSPlotData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0D017556EA7007CB143 /* WSPlotDisc.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF09C17556EA7007CB143 /* WSPlotDisc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0D117556EA7007CB143 /* WSPlotGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF09F17556EA7007CB143 /* WSPlotGraph.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0D217556EA7007CB143 /* WSPlotRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF0A117556EA7007CB143 /* WSPlotRegion.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0D317556EA7007CB143 /* WSPlotTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF0A317556EA7007CB143 /* WSPlotTemplate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0D417556EA7007CB143 /* WSTicks.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF0A517556EA7007CB143 /* WSTicks.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0D517556EA7007CB143 /* WSVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF0A717556EA7007CB143 /* WSVersion.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0D617556EA7007CB143 /* WSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF0AA17556EA7007CB143 /* WSView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0DE175570A1007CB143 /* DemoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF0DB175570A1007CB143 /* DemoData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		586EF0DF175570A1007CB143 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF0DD175570A1007CB143 /* RootViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +83,114 @@
 		586EF03617556E28007CB143 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		586EF03717556E28007CB143 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		586EF03A17556E28007CB143 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		586EF04317556EA6007CB143 /* NAAmethyst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAAmethyst.h; sourceTree = "<group>"; };
+		586EF04417556EA6007CB143 /* NAArrow.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAArrow.c; sourceTree = "<group>"; };
+		586EF04517556EA6007CB143 /* NAArrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAArrow.h; sourceTree = "<group>"; };
+		586EF04617556EA6007CB143 /* NABase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NABase.h; sourceTree = "<group>"; };
+		586EF04717556EA6007CB143 /* NABezierControlPoints.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NABezierControlPoints.c; sourceTree = "<group>"; };
+		586EF04817556EA6007CB143 /* NABezierControlPoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NABezierControlPoints.h; sourceTree = "<group>"; };
+		586EF04917556EA6007CB143 /* NADashing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NADashing.c; sourceTree = "<group>"; };
+		586EF04A17556EA6007CB143 /* NADashing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADashing.h; sourceTree = "<group>"; };
+		586EF04B17556EA6007CB143 /* NALineIntersection.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NALineIntersection.c; sourceTree = "<group>"; };
+		586EF04C17556EA6007CB143 /* NALineIntersection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NALineIntersection.h; sourceTree = "<group>"; };
+		586EF04D17556EA6007CB143 /* NALineRectangleIntersection.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NALineRectangleIntersection.c; sourceTree = "<group>"; };
+		586EF04E17556EA6007CB143 /* NALineRectangleIntersection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NALineRectangleIntersection.h; sourceTree = "<group>"; };
+		586EF04F17556EA6007CB143 /* NARange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NARange.h; sourceTree = "<group>"; };
+		586EF05017556EA6007CB143 /* NASymbol.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NASymbol.c; sourceTree = "<group>"; };
+		586EF05117556EA6007CB143 /* NASymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NASymbol.h; sourceTree = "<group>"; };
+		586EF05217556EA6007CB143 /* PowerPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerPlot.h; sourceTree = "<group>"; };
+		586EF05317556EA6007CB143 /* WSAuxiliary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAuxiliary.h; sourceTree = "<group>"; };
+		586EF05417556EA6007CB143 /* WSAxisLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAxisLocation.h; sourceTree = "<group>"; };
+		586EF05517556EA6007CB143 /* WSAxisLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAxisLocation.m; sourceTree = "<group>"; };
+		586EF05617556EA6007CB143 /* WSAxisLocationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAxisLocationDelegate.h; sourceTree = "<group>"; };
+		586EF05717556EA6007CB143 /* WSAxisProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAxisProperties.h; sourceTree = "<group>"; };
+		586EF05817556EA6007CB143 /* WSAxisProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAxisProperties.m; sourceTree = "<group>"; };
+		586EF05917556EA6007CB143 /* WSBarPlotFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSBarPlotFactory.h; sourceTree = "<group>"; };
+		586EF05A17556EA6007CB143 /* WSBarPlotFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBarPlotFactory.m; sourceTree = "<group>"; };
+		586EF05B17556EA6007CB143 /* WSBarProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSBarProperties.h; sourceTree = "<group>"; };
+		586EF05C17556EA6007CB143 /* WSBarProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBarProperties.m; sourceTree = "<group>"; };
+		586EF05D17556EA6007CB143 /* WSBinning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSBinning.h; sourceTree = "<group>"; };
+		586EF05E17556EA6007CB143 /* WSBinning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBinning.m; sourceTree = "<group>"; };
+		586EF05F17556EA6007CB143 /* WSChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSChart.h; sourceTree = "<group>"; };
+		586EF06017556EA6007CB143 /* WSChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSChart.m; sourceTree = "<group>"; };
+		586EF06117556EA6007CB143 /* WSChartAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSChartAnimation.h; sourceTree = "<group>"; };
+		586EF06217556EA6007CB143 /* WSChartAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSChartAnimation.m; sourceTree = "<group>"; };
+		586EF06317556EA6007CB143 /* WSChartAnimationKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSChartAnimationKeys.h; sourceTree = "<group>"; };
+		586EF06417556EA6007CB143 /* WSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSColor.h; sourceTree = "<group>"; };
+		586EF06517556EA6007CB143 /* WSColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSColor.m; sourceTree = "<group>"; };
+		586EF06617556EA6007CB143 /* WSColorScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSColorScheme.h; sourceTree = "<group>"; };
+		586EF06717556EA6007CB143 /* WSColorScheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSColorScheme.m; sourceTree = "<group>"; };
+		586EF06817556EA6007CB143 /* WSConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSConnection.h; sourceTree = "<group>"; };
+		586EF06917556EA6007CB143 /* WSConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSConnection.m; sourceTree = "<group>"; };
+		586EF06A17556EA6007CB143 /* WSConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSConnectionDelegate.h; sourceTree = "<group>"; };
+		586EF06B17556EA6007CB143 /* WSContour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSContour.h; sourceTree = "<group>"; };
+		586EF06C17556EA6007CB143 /* WSContour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSContour.m; sourceTree = "<group>"; };
+		586EF06D17556EA6007CB143 /* WSControllerGestureDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSControllerGestureDelegate.h; sourceTree = "<group>"; };
+		586EF06E17556EA6007CB143 /* WSCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSCoordinate.h; sourceTree = "<group>"; };
+		586EF06F17556EA6007CB143 /* WSCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCoordinate.m; sourceTree = "<group>"; };
+		586EF07017556EA6007CB143 /* WSCoordinateDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSCoordinateDelegate.h; sourceTree = "<group>"; };
+		586EF07117556EA6007CB143 /* WSCoordinateDirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSCoordinateDirection.h; sourceTree = "<group>"; };
+		586EF07217556EA6007CB143 /* WSCoordinateTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSCoordinateTransform.h; sourceTree = "<group>"; };
+		586EF07317556EA6007CB143 /* WSCustomProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSCustomProperties.h; sourceTree = "<group>"; };
+		586EF07417556EA6007CB143 /* WSCustomProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCustomProperties.m; sourceTree = "<group>"; };
+		586EF07517556EA6007CB143 /* WSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSData.h; sourceTree = "<group>"; };
+		586EF07617556EA6007CB143 /* WSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSData.m; sourceTree = "<group>"; };
+		586EF07717556EA6007CB143 /* WSDataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDataDelegate.h; sourceTree = "<group>"; };
+		586EF07817556EA6007CB143 /* WSDataOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDataOperations.h; sourceTree = "<group>"; };
+		586EF07917556EA6007CB143 /* WSDataOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDataOperations.m; sourceTree = "<group>"; };
+		586EF07A17556EA6007CB143 /* WSDataPointProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDataPointProperties.h; sourceTree = "<group>"; };
+		586EF07B17556EA6007CB143 /* WSDataPointProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDataPointProperties.m; sourceTree = "<group>"; };
+		586EF07C17556EA6007CB143 /* WSDatum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDatum.h; sourceTree = "<group>"; };
+		586EF07D17556EA6007CB143 /* WSDatum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDatum.m; sourceTree = "<group>"; };
+		586EF07E17556EA6007CB143 /* WSDatumCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDatumCustomization.h; sourceTree = "<group>"; };
+		586EF07F17556EA6007CB143 /* WSDiscProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDiscProperties.h; sourceTree = "<group>"; };
+		586EF08017556EA6007CB143 /* WSDiscProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDiscProperties.m; sourceTree = "<group>"; };
+		586EF08117556EA6007CB143 /* WSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFont.h; sourceTree = "<group>"; };
+		586EF08217556EA6007CB143 /* WSFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFont.m; sourceTree = "<group>"; };
+		586EF08317556EA6007CB143 /* WSGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGraph.h; sourceTree = "<group>"; };
+		586EF08417556EA6007CB143 /* WSGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSGraph.m; sourceTree = "<group>"; };
+		586EF08517556EA6007CB143 /* WSGraphConnections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGraphConnections.h; sourceTree = "<group>"; };
+		586EF08617556EA6007CB143 /* WSGraphConnections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSGraphConnections.m; sourceTree = "<group>"; };
+		586EF08717556EA6007CB143 /* WSGraphPlotFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGraphPlotFactory.h; sourceTree = "<group>"; };
+		586EF08817556EA6007CB143 /* WSGraphPlotFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSGraphPlotFactory.m; sourceTree = "<group>"; };
+		586EF08917556EA6007CB143 /* WSLinePlotFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSLinePlotFactory.h; sourceTree = "<group>"; };
+		586EF08A17556EA6007CB143 /* WSLinePlotFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSLinePlotFactory.m; sourceTree = "<group>"; };
+		586EF08B17556EA6007CB143 /* WSNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNode.h; sourceTree = "<group>"; };
+		586EF08C17556EA6007CB143 /* WSNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSNode.m; sourceTree = "<group>"; };
+		586EF08D17556EA6007CB143 /* WSNodeProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNodeProperties.h; sourceTree = "<group>"; };
+		586EF08E17556EA6007CB143 /* WSNodeProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSNodeProperties.m; sourceTree = "<group>"; };
+		586EF08F17556EA6007CB143 /* WSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSObject.h; sourceTree = "<group>"; };
+		586EF09017556EA6007CB143 /* WSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSObject.m; sourceTree = "<group>"; };
+		586EF09117556EA7007CB143 /* WSPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPlot.h; sourceTree = "<group>"; };
+		586EF09217556EA7007CB143 /* WSPlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPlot.m; sourceTree = "<group>"; };
+		586EF09317556EA7007CB143 /* WSPlotAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPlotAxis.h; sourceTree = "<group>"; };
+		586EF09417556EA7007CB143 /* WSPlotAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPlotAxis.m; sourceTree = "<group>"; };
+		586EF09517556EA7007CB143 /* WSPlotBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPlotBar.h; sourceTree = "<group>"; };
+		586EF09617556EA7007CB143 /* WSPlotBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPlotBar.m; sourceTree = "<group>"; };
+		586EF09717556EA7007CB143 /* WSPlotController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPlotController.h; sourceTree = "<group>"; };
+		586EF09817556EA7007CB143 /* WSPlotController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPlotController.m; sourceTree = "<group>"; };
+		586EF09917556EA7007CB143 /* WSPlotData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPlotData.h; sourceTree = "<group>"; };
+		586EF09A17556EA7007CB143 /* WSPlotData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPlotData.m; sourceTree = "<group>"; };
+		586EF09B17556EA7007CB143 /* WSPlotDisc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPlotDisc.h; sourceTree = "<group>"; };
+		586EF09C17556EA7007CB143 /* WSPlotDisc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPlotDisc.m; sourceTree = "<group>"; };
+		586EF09D17556EA7007CB143 /* WSPlotFactoryDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPlotFactoryDefaults.h; sourceTree = "<group>"; };
+		586EF09E17556EA7007CB143 /* WSPlotGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPlotGraph.h; sourceTree = "<group>"; };
+		586EF09F17556EA7007CB143 /* WSPlotGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPlotGraph.m; sourceTree = "<group>"; };
+		586EF0A017556EA7007CB143 /* WSPlotRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPlotRegion.h; sourceTree = "<group>"; };
+		586EF0A117556EA7007CB143 /* WSPlotRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPlotRegion.m; sourceTree = "<group>"; };
+		586EF0A217556EA7007CB143 /* WSPlotTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPlotTemplate.h; sourceTree = "<group>"; };
+		586EF0A317556EA7007CB143 /* WSPlotTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPlotTemplate.m; sourceTree = "<group>"; };
+		586EF0A417556EA7007CB143 /* WSTicks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSTicks.h; sourceTree = "<group>"; };
+		586EF0A517556EA7007CB143 /* WSTicks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSTicks.m; sourceTree = "<group>"; };
+		586EF0A617556EA7007CB143 /* WSVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSVersion.h; sourceTree = "<group>"; };
+		586EF0A717556EA7007CB143 /* WSVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSVersion.m; sourceTree = "<group>"; };
+		586EF0A817556EA7007CB143 /* WSVersionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSVersionDelegate.h; sourceTree = "<group>"; };
+		586EF0A917556EA7007CB143 /* WSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSView.h; sourceTree = "<group>"; };
+		586EF0AA17556EA7007CB143 /* WSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSView.m; sourceTree = "<group>"; };
+		586EF0DA175570A1007CB143 /* DemoData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoData.h; sourceTree = "<group>"; };
+		586EF0DB175570A1007CB143 /* DemoData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoData.m; sourceTree = "<group>"; };
+		586EF0DC175570A1007CB143 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		586EF0DD175570A1007CB143 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				586EF02417556E27007CB143 /* IntagratingMachine */,
+				586EF04117556EA6007CB143 /* Submodules */,
 				586EF01D17556E27007CB143 /* Frameworks */,
 				586EF01C17556E27007CB143 /* Products */,
 			);
@@ -83,6 +238,7 @@
 		586EF02417556E27007CB143 /* IntagratingMachine */ = {
 			isa = PBXGroup;
 			children = (
+				586EF0D9175570A1007CB143 /* Common */,
 				586EF02D17556E28007CB143 /* AppDelegate.h */,
 				586EF02E17556E28007CB143 /* AppDelegate.m */,
 				586EF03617556E28007CB143 /* ViewController.h */,
@@ -105,6 +261,137 @@
 				586EF03417556E28007CB143 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		586EF04117556EA6007CB143 /* Submodules */ = {
+			isa = PBXGroup;
+			children = (
+				586EF04217556EA6007CB143 /* PowerPlot */,
+			);
+			name = Submodules;
+			path = IntagratingMachine/Submodules;
+			sourceTree = "<group>";
+		};
+		586EF04217556EA6007CB143 /* PowerPlot */ = {
+			isa = PBXGroup;
+			children = (
+				586EF04317556EA6007CB143 /* NAAmethyst.h */,
+				586EF04417556EA6007CB143 /* NAArrow.c */,
+				586EF04517556EA6007CB143 /* NAArrow.h */,
+				586EF04617556EA6007CB143 /* NABase.h */,
+				586EF04717556EA6007CB143 /* NABezierControlPoints.c */,
+				586EF04817556EA6007CB143 /* NABezierControlPoints.h */,
+				586EF04917556EA6007CB143 /* NADashing.c */,
+				586EF04A17556EA6007CB143 /* NADashing.h */,
+				586EF04B17556EA6007CB143 /* NALineIntersection.c */,
+				586EF04C17556EA6007CB143 /* NALineIntersection.h */,
+				586EF04D17556EA6007CB143 /* NALineRectangleIntersection.c */,
+				586EF04E17556EA6007CB143 /* NALineRectangleIntersection.h */,
+				586EF04F17556EA6007CB143 /* NARange.h */,
+				586EF05017556EA6007CB143 /* NASymbol.c */,
+				586EF05117556EA6007CB143 /* NASymbol.h */,
+				586EF05217556EA6007CB143 /* PowerPlot.h */,
+				586EF05317556EA6007CB143 /* WSAuxiliary.h */,
+				586EF05417556EA6007CB143 /* WSAxisLocation.h */,
+				586EF05517556EA6007CB143 /* WSAxisLocation.m */,
+				586EF05617556EA6007CB143 /* WSAxisLocationDelegate.h */,
+				586EF05717556EA6007CB143 /* WSAxisProperties.h */,
+				586EF05817556EA6007CB143 /* WSAxisProperties.m */,
+				586EF05917556EA6007CB143 /* WSBarPlotFactory.h */,
+				586EF05A17556EA6007CB143 /* WSBarPlotFactory.m */,
+				586EF05B17556EA6007CB143 /* WSBarProperties.h */,
+				586EF05C17556EA6007CB143 /* WSBarProperties.m */,
+				586EF05D17556EA6007CB143 /* WSBinning.h */,
+				586EF05E17556EA6007CB143 /* WSBinning.m */,
+				586EF05F17556EA6007CB143 /* WSChart.h */,
+				586EF06017556EA6007CB143 /* WSChart.m */,
+				586EF06117556EA6007CB143 /* WSChartAnimation.h */,
+				586EF06217556EA6007CB143 /* WSChartAnimation.m */,
+				586EF06317556EA6007CB143 /* WSChartAnimationKeys.h */,
+				586EF06417556EA6007CB143 /* WSColor.h */,
+				586EF06517556EA6007CB143 /* WSColor.m */,
+				586EF06617556EA6007CB143 /* WSColorScheme.h */,
+				586EF06717556EA6007CB143 /* WSColorScheme.m */,
+				586EF06817556EA6007CB143 /* WSConnection.h */,
+				586EF06917556EA6007CB143 /* WSConnection.m */,
+				586EF06A17556EA6007CB143 /* WSConnectionDelegate.h */,
+				586EF06B17556EA6007CB143 /* WSContour.h */,
+				586EF06C17556EA6007CB143 /* WSContour.m */,
+				586EF06D17556EA6007CB143 /* WSControllerGestureDelegate.h */,
+				586EF06E17556EA6007CB143 /* WSCoordinate.h */,
+				586EF06F17556EA6007CB143 /* WSCoordinate.m */,
+				586EF07017556EA6007CB143 /* WSCoordinateDelegate.h */,
+				586EF07117556EA6007CB143 /* WSCoordinateDirection.h */,
+				586EF07217556EA6007CB143 /* WSCoordinateTransform.h */,
+				586EF07317556EA6007CB143 /* WSCustomProperties.h */,
+				586EF07417556EA6007CB143 /* WSCustomProperties.m */,
+				586EF07517556EA6007CB143 /* WSData.h */,
+				586EF07617556EA6007CB143 /* WSData.m */,
+				586EF07717556EA6007CB143 /* WSDataDelegate.h */,
+				586EF07817556EA6007CB143 /* WSDataOperations.h */,
+				586EF07917556EA6007CB143 /* WSDataOperations.m */,
+				586EF07A17556EA6007CB143 /* WSDataPointProperties.h */,
+				586EF07B17556EA6007CB143 /* WSDataPointProperties.m */,
+				586EF07C17556EA6007CB143 /* WSDatum.h */,
+				586EF07D17556EA6007CB143 /* WSDatum.m */,
+				586EF07E17556EA6007CB143 /* WSDatumCustomization.h */,
+				586EF07F17556EA6007CB143 /* WSDiscProperties.h */,
+				586EF08017556EA6007CB143 /* WSDiscProperties.m */,
+				586EF08117556EA6007CB143 /* WSFont.h */,
+				586EF08217556EA6007CB143 /* WSFont.m */,
+				586EF08317556EA6007CB143 /* WSGraph.h */,
+				586EF08417556EA6007CB143 /* WSGraph.m */,
+				586EF08517556EA6007CB143 /* WSGraphConnections.h */,
+				586EF08617556EA6007CB143 /* WSGraphConnections.m */,
+				586EF08717556EA6007CB143 /* WSGraphPlotFactory.h */,
+				586EF08817556EA6007CB143 /* WSGraphPlotFactory.m */,
+				586EF08917556EA6007CB143 /* WSLinePlotFactory.h */,
+				586EF08A17556EA6007CB143 /* WSLinePlotFactory.m */,
+				586EF08B17556EA6007CB143 /* WSNode.h */,
+				586EF08C17556EA6007CB143 /* WSNode.m */,
+				586EF08D17556EA6007CB143 /* WSNodeProperties.h */,
+				586EF08E17556EA6007CB143 /* WSNodeProperties.m */,
+				586EF08F17556EA6007CB143 /* WSObject.h */,
+				586EF09017556EA6007CB143 /* WSObject.m */,
+				586EF09117556EA7007CB143 /* WSPlot.h */,
+				586EF09217556EA7007CB143 /* WSPlot.m */,
+				586EF09317556EA7007CB143 /* WSPlotAxis.h */,
+				586EF09417556EA7007CB143 /* WSPlotAxis.m */,
+				586EF09517556EA7007CB143 /* WSPlotBar.h */,
+				586EF09617556EA7007CB143 /* WSPlotBar.m */,
+				586EF09717556EA7007CB143 /* WSPlotController.h */,
+				586EF09817556EA7007CB143 /* WSPlotController.m */,
+				586EF09917556EA7007CB143 /* WSPlotData.h */,
+				586EF09A17556EA7007CB143 /* WSPlotData.m */,
+				586EF09B17556EA7007CB143 /* WSPlotDisc.h */,
+				586EF09C17556EA7007CB143 /* WSPlotDisc.m */,
+				586EF09D17556EA7007CB143 /* WSPlotFactoryDefaults.h */,
+				586EF09E17556EA7007CB143 /* WSPlotGraph.h */,
+				586EF09F17556EA7007CB143 /* WSPlotGraph.m */,
+				586EF0A017556EA7007CB143 /* WSPlotRegion.h */,
+				586EF0A117556EA7007CB143 /* WSPlotRegion.m */,
+				586EF0A217556EA7007CB143 /* WSPlotTemplate.h */,
+				586EF0A317556EA7007CB143 /* WSPlotTemplate.m */,
+				586EF0A417556EA7007CB143 /* WSTicks.h */,
+				586EF0A517556EA7007CB143 /* WSTicks.m */,
+				586EF0A617556EA7007CB143 /* WSVersion.h */,
+				586EF0A717556EA7007CB143 /* WSVersion.m */,
+				586EF0A817556EA7007CB143 /* WSVersionDelegate.h */,
+				586EF0A917556EA7007CB143 /* WSView.h */,
+				586EF0AA17556EA7007CB143 /* WSView.m */,
+			);
+			path = PowerPlot;
+			sourceTree = "<group>";
+		};
+		586EF0D9175570A1007CB143 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				586EF0DA175570A1007CB143 /* DemoData.h */,
+				586EF0DB175570A1007CB143 /* DemoData.m */,
+				586EF0DC175570A1007CB143 /* RootViewController.h */,
+				586EF0DD175570A1007CB143 /* RootViewController.m */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +463,52 @@
 				586EF02B17556E28007CB143 /* main.m in Sources */,
 				586EF02F17556E28007CB143 /* AppDelegate.m in Sources */,
 				586EF03817556E28007CB143 /* ViewController.m in Sources */,
+				586EF0AB17556EA7007CB143 /* NAArrow.c in Sources */,
+				586EF0AC17556EA7007CB143 /* NABezierControlPoints.c in Sources */,
+				586EF0AD17556EA7007CB143 /* NADashing.c in Sources */,
+				586EF0AE17556EA7007CB143 /* NALineIntersection.c in Sources */,
+				586EF0AF17556EA7007CB143 /* NALineRectangleIntersection.c in Sources */,
+				586EF0B017556EA7007CB143 /* NASymbol.c in Sources */,
+				586EF0B117556EA7007CB143 /* WSAxisLocation.m in Sources */,
+				586EF0B217556EA7007CB143 /* WSAxisProperties.m in Sources */,
+				586EF0B317556EA7007CB143 /* WSBarPlotFactory.m in Sources */,
+				586EF0B417556EA7007CB143 /* WSBarProperties.m in Sources */,
+				586EF0B517556EA7007CB143 /* WSBinning.m in Sources */,
+				586EF0B617556EA7007CB143 /* WSChart.m in Sources */,
+				586EF0B717556EA7007CB143 /* WSChartAnimation.m in Sources */,
+				586EF0B817556EA7007CB143 /* WSColor.m in Sources */,
+				586EF0B917556EA7007CB143 /* WSColorScheme.m in Sources */,
+				586EF0BA17556EA7007CB143 /* WSConnection.m in Sources */,
+				586EF0BB17556EA7007CB143 /* WSContour.m in Sources */,
+				586EF0BC17556EA7007CB143 /* WSCoordinate.m in Sources */,
+				586EF0BD17556EA7007CB143 /* WSCustomProperties.m in Sources */,
+				586EF0BE17556EA7007CB143 /* WSData.m in Sources */,
+				586EF0BF17556EA7007CB143 /* WSDataOperations.m in Sources */,
+				586EF0C017556EA7007CB143 /* WSDataPointProperties.m in Sources */,
+				586EF0C117556EA7007CB143 /* WSDatum.m in Sources */,
+				586EF0C217556EA7007CB143 /* WSDiscProperties.m in Sources */,
+				586EF0C317556EA7007CB143 /* WSFont.m in Sources */,
+				586EF0C417556EA7007CB143 /* WSGraph.m in Sources */,
+				586EF0C517556EA7007CB143 /* WSGraphConnections.m in Sources */,
+				586EF0C617556EA7007CB143 /* WSGraphPlotFactory.m in Sources */,
+				586EF0C717556EA7007CB143 /* WSLinePlotFactory.m in Sources */,
+				586EF0C817556EA7007CB143 /* WSNode.m in Sources */,
+				586EF0C917556EA7007CB143 /* WSNodeProperties.m in Sources */,
+				586EF0CA17556EA7007CB143 /* WSObject.m in Sources */,
+				586EF0CB17556EA7007CB143 /* WSPlot.m in Sources */,
+				586EF0CC17556EA7007CB143 /* WSPlotAxis.m in Sources */,
+				586EF0CD17556EA7007CB143 /* WSPlotBar.m in Sources */,
+				586EF0CE17556EA7007CB143 /* WSPlotController.m in Sources */,
+				586EF0CF17556EA7007CB143 /* WSPlotData.m in Sources */,
+				586EF0D017556EA7007CB143 /* WSPlotDisc.m in Sources */,
+				586EF0D117556EA7007CB143 /* WSPlotGraph.m in Sources */,
+				586EF0D217556EA7007CB143 /* WSPlotRegion.m in Sources */,
+				586EF0D317556EA7007CB143 /* WSPlotTemplate.m in Sources */,
+				586EF0D417556EA7007CB143 /* WSTicks.m in Sources */,
+				586EF0D517556EA7007CB143 /* WSVersion.m in Sources */,
+				586EF0D617556EA7007CB143 /* WSView.m in Sources */,
+				586EF0DE175570A1007CB143 /* DemoData.m in Sources */,
+				586EF0DF175570A1007CB143 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
