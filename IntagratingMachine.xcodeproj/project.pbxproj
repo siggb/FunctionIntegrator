@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5806940F1757436D0030F81F /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5806940D1757436D0030F81F /* FirstViewController.m */; };
+		580694101757436D0030F81F /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5806940E1757436D0030F81F /* FirstViewController.xib */; };
+		58069414175743750030F81F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58069412175743750030F81F /* SecondViewController.m */; };
+		58069415175743750030F81F /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58069413175743750030F81F /* SecondViewController.xib */; };
+		580694191757437E0030F81F /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 580694171757437E0030F81F /* ThirdViewController.m */; };
+		5806941A1757437E0030F81F /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 580694181757437E0030F81F /* ThirdViewController.xib */; };
 		586EF01F17556E27007CB143 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586EF01E17556E27007CB143 /* UIKit.framework */; };
 		586EF02117556E27007CB143 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586EF02017556E27007CB143 /* Foundation.framework */; };
 		586EF02317556E27007CB143 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586EF02217556E27007CB143 /* CoreGraphics.framework */; };
@@ -16,8 +22,6 @@
 		586EF03117556E28007CB143 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 586EF03017556E28007CB143 /* Default.png */; };
 		586EF03317556E28007CB143 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 586EF03217556E28007CB143 /* Default@2x.png */; };
 		586EF03517556E28007CB143 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 586EF03417556E28007CB143 /* Default-568h@2x.png */; };
-		586EF03817556E28007CB143 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586EF03717556E28007CB143 /* ViewController.m */; };
-		586EF03B17556E28007CB143 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 586EF03917556E28007CB143 /* ViewController.xib */; };
 		586EF0AB17556EA7007CB143 /* NAArrow.c in Sources */ = {isa = PBXBuildFile; fileRef = 586EF04417556EA6007CB143 /* NAArrow.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		586EF0AC17556EA7007CB143 /* NABezierControlPoints.c in Sources */ = {isa = PBXBuildFile; fileRef = 586EF04717556EA6007CB143 /* NABezierControlPoints.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		586EF0AD17556EA7007CB143 /* NADashing.c in Sources */ = {isa = PBXBuildFile; fileRef = 586EF04917556EA6007CB143 /* NADashing.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -67,6 +71,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5806940C1757436D0030F81F /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		5806940D1757436D0030F81F /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		5806940E1757436D0030F81F /* FirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
+		58069411175743750030F81F /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		58069412175743750030F81F /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		58069413175743750030F81F /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
+		580694161757437E0030F81F /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		580694171757437E0030F81F /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		580694181757437E0030F81F /* ThirdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdViewController.xib; sourceTree = "<group>"; };
 		586EF01B17556E27007CB143 /* IntagratingMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntagratingMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		586EF01E17556E27007CB143 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		586EF02017556E27007CB143 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -80,9 +93,6 @@
 		586EF03017556E28007CB143 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		586EF03217556E28007CB143 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		586EF03417556E28007CB143 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		586EF03617556E28007CB143 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		586EF03717556E28007CB143 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		586EF03A17556E28007CB143 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		586EF04317556EA6007CB143 /* NAAmethyst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAAmethyst.h; sourceTree = "<group>"; };
 		586EF04417556EA6007CB143 /* NAArrow.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NAArrow.c; sourceTree = "<group>"; };
 		586EF04517556EA6007CB143 /* NAArrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAArrow.h; sourceTree = "<group>"; };
@@ -207,6 +217,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58069408175743640030F81F /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				58069409175743640030F81F /* FirstPage */,
+				5806940A175743640030F81F /* SecondPage */,
+				5806940B175743640030F81F /* ThirdPage */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		58069409175743640030F81F /* FirstPage */ = {
+			isa = PBXGroup;
+			children = (
+				5806940C1757436D0030F81F /* FirstViewController.h */,
+				5806940D1757436D0030F81F /* FirstViewController.m */,
+				5806940E1757436D0030F81F /* FirstViewController.xib */,
+			);
+			path = FirstPage;
+			sourceTree = "<group>";
+		};
+		5806940A175743640030F81F /* SecondPage */ = {
+			isa = PBXGroup;
+			children = (
+				58069411175743750030F81F /* SecondViewController.h */,
+				58069412175743750030F81F /* SecondViewController.m */,
+				58069413175743750030F81F /* SecondViewController.xib */,
+			);
+			path = SecondPage;
+			sourceTree = "<group>";
+		};
+		5806940B175743640030F81F /* ThirdPage */ = {
+			isa = PBXGroup;
+			children = (
+				580694161757437E0030F81F /* ThirdViewController.h */,
+				580694171757437E0030F81F /* ThirdViewController.m */,
+				580694181757437E0030F81F /* ThirdViewController.xib */,
+			);
+			path = ThirdPage;
+			sourceTree = "<group>";
+		};
 		586EF01217556E27007CB143 = {
 			isa = PBXGroup;
 			children = (
@@ -238,12 +288,10 @@
 		586EF02417556E27007CB143 /* IntagratingMachine */ = {
 			isa = PBXGroup;
 			children = (
-				586EF0D9175570A1007CB143 /* Common */,
 				586EF02D17556E28007CB143 /* AppDelegate.h */,
 				586EF02E17556E28007CB143 /* AppDelegate.m */,
-				586EF03617556E28007CB143 /* ViewController.h */,
-				586EF03717556E28007CB143 /* ViewController.m */,
-				586EF03917556E28007CB143 /* ViewController.xib */,
+				58069408175743640030F81F /* Pages */,
+				586EF0D9175570A1007CB143 /* Common */,
 				586EF02517556E28007CB143 /* Supporting Files */,
 			);
 			path = IntagratingMachine;
@@ -449,7 +497,9 @@
 				586EF03117556E28007CB143 /* Default.png in Resources */,
 				586EF03317556E28007CB143 /* Default@2x.png in Resources */,
 				586EF03517556E28007CB143 /* Default-568h@2x.png in Resources */,
-				586EF03B17556E28007CB143 /* ViewController.xib in Resources */,
+				580694101757436D0030F81F /* FirstViewController.xib in Resources */,
+				58069415175743750030F81F /* SecondViewController.xib in Resources */,
+				5806941A1757437E0030F81F /* ThirdViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,7 +512,6 @@
 			files = (
 				586EF02B17556E28007CB143 /* main.m in Sources */,
 				586EF02F17556E28007CB143 /* AppDelegate.m in Sources */,
-				586EF03817556E28007CB143 /* ViewController.m in Sources */,
 				586EF0AB17556EA7007CB143 /* NAArrow.c in Sources */,
 				586EF0AC17556EA7007CB143 /* NABezierControlPoints.c in Sources */,
 				586EF0AD17556EA7007CB143 /* NADashing.c in Sources */,
@@ -509,6 +558,9 @@
 				586EF0D617556EA7007CB143 /* WSView.m in Sources */,
 				586EF0DE175570A1007CB143 /* DemoData.m in Sources */,
 				586EF0DF175570A1007CB143 /* RootViewController.m in Sources */,
+				5806940F1757436D0030F81F /* FirstViewController.m in Sources */,
+				58069414175743750030F81F /* SecondViewController.m in Sources */,
+				580694191757437E0030F81F /* ThirdViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,14 +573,6 @@
 				586EF02817556E28007CB143 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		586EF03917556E28007CB143 /* ViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				586EF03A17556E28007CB143 /* en */,
-			);
-			name = ViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -633,6 +677,7 @@
 				586EF04017556E28007CB143 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

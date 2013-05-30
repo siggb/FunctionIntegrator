@@ -45,9 +45,11 @@
 
 
 - (void)printGreetings {
+    /*
     NSLog(@"%@. %@ version.",
           [self version],
           [self licenseStyle]);
+     */
 }
 
 - (id)init {

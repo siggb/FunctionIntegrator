@@ -9,7 +9,15 @@
 #endif
 
 #ifdef __OBJC__
-    #import <UIKit/UIKit.h>
-    #import <Foundation/Foundation.h>
-    #import "PowerPlot.h"
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#import "PowerPlot.h"
+#import "DemoData.h"
+
+#import "FirstViewController.h"
+#import "SecondViewController.h"
+#import "ThirdViewController.h"
+
 #endif

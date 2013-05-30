@@ -1,14 +1,14 @@
 //
-//  ViewController.m
+//  FirstViewController.m
 //  IntagratingMachine
 //
-//  Created by Ildar Sibagatov on 29.05.13.
+//  Created by Ildar Sibagatov on 30.05.13.
 //  Copyright (c) 2013 sig. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "FirstViewController.h"
 
-@interface ViewController()
+@interface FirstViewController ()
 {
     WSChart *_choice[3];
 }
@@ -17,12 +17,21 @@
 
 
 
-@implementation ViewController
+@implementation FirstViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
+    
     // Our test data.
     WSData *testD = [DemoData scientificData];
     
