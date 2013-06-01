@@ -12,11 +12,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
-    self.viewController = [FirstViewController controllerWithDefaultNib];
-    self.window.rootViewController = self.viewController;
+    NSLog(@"Let's go!");
     
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.viewController = [FirstViewController controllerWithDefaultNib];
+    
+    self.mainNaviController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    [self.mainNaviController setNavigationBarHidden:YES];
+    
+    self.window.rootViewController = self.mainNaviController;    
     [self.window makeKeyAndVisible];
     return YES;
 }

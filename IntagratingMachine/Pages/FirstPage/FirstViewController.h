@@ -10,6 +10,4 @@
 
 @interface FirstViewController : RootViewController
 
-@property (nonatomic, weak) IBOutlet WSChart *chart;
-
 @end
