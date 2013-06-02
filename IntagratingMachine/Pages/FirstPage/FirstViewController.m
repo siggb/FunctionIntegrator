@@ -13,7 +13,7 @@
 @interface FirstViewController ()
 {
     // Наборы данных кривых
-    WSChart *_choice[3];
+    WSChart *graphics[3];
     
     // Переменные
     NSInteger y, x0, xn, k;
@@ -127,23 +127,24 @@
     [self drawFirstPlot:testD];
 }
 
-#pragma mark - Отрисовка графики
+#pragma mark - Построение графиков
 
 - (void)drawFirstPlot:(WSData*)data
 {
-    // Autoconfigure the plot.
-    _choice[0] = [WSChart linePlotWithFrame:[self.chart1 frame]
+    // Формируем график по данным
+    graphics[0] = [WSChart linePlotWithFrame:[self.chart1 frame]
                                        data:data
                                       style:kChartLineGradient
                                   axisStyle:kCSGrid
                                 colorScheme:kColorLight
                                      labelX:NSLocalizedString(@"Crystal orientation", @"")
                                      labelY:NSLocalizedString(@"Energy output", @"")];
-    [_choice[0] setAllAxisLocationXD:1.328];
-    [_choice[0] setAllAxisLocationYD:-0.1];
+    [graphics[0] setAllAxisLocationXD:1.328];
+    [graphics[0] setAllAxisLocationYD:-0.1];
     
+    // Добавляем графики на плоскость координат
     [self.chart1 removeAllPlots];
-    [self.chart1 addPlotsFromChart:_choice[0]];
+    [self.chart1 addPlotsFromChart:graphics[0]];
 }
 
 - (void)drawSecondPlot
