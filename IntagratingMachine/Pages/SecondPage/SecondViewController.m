@@ -10,7 +10,13 @@
 
 @interface SecondViewController ()
 
+// Контроллеры
+@property (nonatomic, strong) ThirdViewController *thirdVC;
+
 @end
+
+
+
 
 @implementation SecondViewController
 
@@ -23,16 +29,46 @@
     return self;
 }
 
+#pragma mark - View Lifecicle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Обработка нажатий
+
+- (IBAction)prevPressed:(id)sender
+{
+    // переходим к предыдущему контроллеру
+    [UIView transitionWithView:self.view.window
+                      duration:1.0f
+                       options:UIViewAnimationOptionTransitionFlipFromBottom
+                    animations:^{
+                        [self.navigationController popViewControllerAnimated:NO];
+                    }
+                    completion:NULL];
+}
+
+- (IBAction)nextPressed:(id)sender
+{
+    // переходим к следующему контроллеру
+    if (self.thirdVC == nil) {
+        self.thirdVC = [ThirdViewController controllerWithDefaultNib];
+    }
+    
+    [UIView transitionWithView:self.view.window
+                      duration:1.0f
+                       options:UIViewAnimationOptionTransitionFlipFromBottom
+                    animations:^{
+                        [self.navigationController pushViewController:self.thirdVC animated:NO];
+                    }
+                    completion:NULL];
 }
 
 @end

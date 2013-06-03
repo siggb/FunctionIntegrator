@@ -23,16 +23,30 @@
     return self;
 }
 
+#pragma mark - View Lifecicle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Обработка нажатий
+
+- (IBAction)prevPressed:(id)sender
+{
+    // переходим к предыдущему контроллеру
+    [UIView transitionWithView:self.view.window
+                      duration:1.0f
+                       options:UIViewAnimationOptionTransitionFlipFromBottom
+                    animations:^{
+                        [self.navigationController popViewControllerAnimated:NO];
+                    }
+                    completion:NULL];
 }
 
 @end
