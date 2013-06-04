@@ -60,6 +60,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self firstPreparing];
 }
 
 - (void)didReceiveMemoryWarning
@@ -94,28 +96,6 @@
         x0 = self.thirdTF.text.integerValue;
         xn = self.thougthTF.text.integerValue;
         
-        step = 0.1;
-        accuracy = 6;
-        scale = 1;
-        
-        // формируем значения переменных
-        for (int i=0; i<([[NSString stringWithFormat:@"%g",(step - floor(step))] length]-2); i++) {
-            scale *= 10;
-        }
-        if ((scale*step - 1) < 0.001) {
-            scale *= 10;
-        }
-        
-        dx = step * scale;
-        
-        // расчет количества разрядов под приращение
-        r = floor(log(step*scale)/log(2)) + 1;
-        
-        // расчет количества разрядов под остаток
-        n = floor(log(10)*accuracy/log(2)) + 1;
-        
-        NSLog(@"step=%f, accuracy=%d, scale=%d, r=%d, n=%d, dx=%d", step, accuracy, scale, r, n, dx);
-        
         [self processIntegrator];
     }
     @catch (NSException *exception) {
@@ -141,6 +121,31 @@
 
 #pragma mark - Работа с интегратором
 
+- (void)firstPreparing
+{
+    step = 0.1;
+    accuracy = 6;
+    scale = 1;
+    
+    // формируем значения переменных
+    for (int i=0; i<([[NSString stringWithFormat:@"%g",(step - floor(step))] length]-2); i++) {
+        scale *= 10;
+    }
+    if ((scale*step - 1) < 0.001) {
+        scale *= 10;
+    }
+    
+    dx = step * scale;
+    
+    // расчет количества разрядов под приращение
+    r = floor(log(step*scale)/log(2)) + 1;
+    
+    // расчет количества разрядов под остаток
+    n = floor(log(10)*accuracy/log(2)) + 1;
+    
+    NSLog(@"step=%f, accuracy=%d, scale=%d, r=%d, n=%d, dx=%d", step, accuracy, scale, r, n, dx);
+}
+
 - (void)processIntegrator
 {
     y *= scale;
@@ -157,8 +162,13 @@
     }
     else {
         // выбран метод трапеций
-        [self trapezoidMethod];
+        dataArrays = [self trapezoidMethod];
     }
+    
+    // очищаем области координат
+    [self.chart1 removeAllPlots];
+    [self.chart2 removeAllPlots];
+    [self.chart3 removeAllPlots];
     
     // рисуем графики
     [self drawFirstPlot:@[dataArrays[0], dataArrays[1]]];
@@ -230,6 +240,8 @@
         
     } while (x <= xn);
     
+    NSLog(@"arr4 : %@, \narr4Y : %@", arr4, arr4Y);
+    
     // формируем данные для графиков
     data1 = [WSData dataWithValues:[NSArray arrayWithArray:arr1Y] valuesX:[NSArray arrayWithArray:arr1]];
     data2 = [WSData dataWithValues:[NSArray arrayWithArray:arr2Y] valuesX:[NSArray arrayWithArray:arr2]];
@@ -239,7 +251,7 @@
     return @[data1, data2, data3, data4];
 }
 
-- (void)trapezoidMethod
+- (NSArray *)trapezoidMethod
 {
     
 }
@@ -249,7 +261,6 @@
 - (void)drawFirstPlot:(NSArray *)dataArr
 {
     int i = 0;
-    [self.chart1 removeAllPlots];
     
     for (WSData *data_i in dataArr) {
         // Формируем график по данным
@@ -270,7 +281,7 @@
 }
 
 - (void)drawSecondPlot:(WSData *)data
-{
+{    
     // Формируем график по данным
     graphics[2] = [WSChart linePlotWithFrame:[self.chart2 frame]
                                         data:data
@@ -282,8 +293,10 @@
     [graphics[2] setAllAxisLocationXD:1.328];
     [graphics[2] setAllAxisLocationYD:-0.1];
     
+    [graphics[2] autoscaleAllAxisX];
+    [graphics[2] autoscaleAllAxisY];
+    
     // Добавляем графики на плоскость координат
-    [self.chart2 removeAllPlots];
     [self.chart2 addPlotsFromChart:graphics[2]];
 }
 
@@ -297,11 +310,13 @@
                                  colorScheme:kColorLight
                                       labelX:@""
                                       labelY:@""];
-    [graphics[3] setAllAxisLocationToOriginXD];
-    [graphics[3] setAllAxisLocationToOriginYD];
+    [graphics[3] autoscaleAllAxisX];
+    [graphics[3] autoscaleAllAxisY];
+    
+    [graphics[3] setAllAxisLocationXD:0.0];
+    [graphics[3] setAllAxisLocationYD:0.0];
     
     // Добавляем графики на плоскость координат
-    [self.chart3 removeAllPlots];
     [self.chart3 addPlotsFromChart:graphics[3]];
 }
 
