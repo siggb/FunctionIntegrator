@@ -117,13 +117,19 @@
 
 - (void)firstPreparing
 {
+    // Показываем заголовки графиков
+    [[self.view viewWithTag:100] setHidden:NO];
+    [[self.view viewWithTag:200] setHidden:NO];
+    [[self.view viewWithTag:300] setHidden:NO];
+    
+    // Начальные уставки
     step = 0.1;
     accuracy = 6;
     scale = 1;
     buf = 0;
     integral = 0;
     
-    // формируем значения переменных
+    // Формируем значения переменных
     for (int i=0; i<([[NSString stringWithFormat:@"%g",(step - floor(step))] length]-2); i++) {
         scale *= 10;
     }
@@ -133,10 +139,10 @@
     
     dx = step * scale;
     
-    // расчет количества разрядов под приращение
+    // Расчет количества разрядов под приращение
     r = floor(log(step*scale)/log(2)) + 1;
     
-    // расчет количества разрядов под остаток
+    // Расчет количества разрядов под остаток
     n = floor(log(10)*accuracy/log(2)) + 1;
     
     NSLog(@"step=%f, accuracy=%d, scale=%d, r=%d, n=%d, dx=%d", step, accuracy, scale, r, n, dx);
