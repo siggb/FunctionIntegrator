@@ -56,6 +56,18 @@
 
 #pragma mark - Обработка нажатий
 
+- (IBAction)reloadPressed:(id)sender
+{
+    [self firstPreparing];
+    
+    @try {
+        [self processIntegrator];
+    }
+    @catch (NSException *exception) {
+        // transform error
+    }
+}
+
 - (IBAction)prevPressed:(id)sender
 {
     // переходим к предыдущему контроллеру
@@ -130,24 +142,41 @@
     float erty1=y0-fabs(ry1-[self f:xn])/hy;
     
     // массивы значений
-    WSData *data1, *data2, *data3, *data4;
+    //WSData *data1, *data2, *data3, *data4;
     
-    NSMutableArray *arr1, *arr2, *arr3, *arr4 = [NSMutableArray array];
-    NSMutableArray *arr1Y, *arr2Y, *arr3Y, *arr4Y = [NSMutableArray array];
+    NSMutableArray *arr1 = [NSMutableArray array];
+    NSMutableArray *arr2 = [NSMutableArray array];
+    NSMutableArray *arr3 = [NSMutableArray array];
+    NSMutableArray *arr4 = [NSMutableArray array];
     
-    for(int i=1;i<=638;i++)
-    {
+    NSMutableArray *arr1Y = [NSMutableArray array];
+    NSMutableArray *arr2Y = [NSMutableArray array];
+    NSMutableArray *arr3Y = [NSMutableArray array];
+    NSMutableArray *arr4Y = [NSMutableArray array];
+    
+    [arr1 addObject:[NSNumber numberWithInt:10]];
+    [arr1Y addObject:[NSNumber numberWithInt:10]];
+    
+    NSLog(@"arr1 : %d", arr1.count);
+    
+    for(int i=1; i<=638; i++)
+    {        
         // Построение эталона
         float sy2=y0-[self f:(xn+i*hx)]/hy;
         //Image1->Canvas->Pen->Width=2;
         //Image1->Canvas->Pen->Color=clBlack;
         //Image1->Canvas->MoveTo(sx1,sy1);
         //Image1->Canvas->LineTo(sx2,sy2);
-        [arr1 addObject:@(sx1)];
-        [arr1Y addObject:@(sy1)];
-        [arr2 addObject:@(sx2)];
-        [arr2Y addObject:@(sy2)];
+        
+        if (i == 1) {
+            [arr1 addObject:@(sx1)];
+            [arr1Y addObject:@(sy1)];
+        }        
+        [arr1 addObject:@(sx2)];
+        [arr1Y addObject:@(sy2)];
         sy1=sy2;
+        
+        //NSLog(@"%@ %@ %@ %@", @(sx1), @(sy1), @(sx2), @(sy2));
         
         // Интегрирование методом прямоугольников
         ry3+=rdy3;
@@ -203,6 +232,7 @@
         sx2+=1;
     }
     
+    NSLog(@"arr1 : %d, arr1Y : %@", arr1.count, arr1Y);
 }
 
 // Целевая функция

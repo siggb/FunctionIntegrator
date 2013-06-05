@@ -49,7 +49,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self firstPreparing];
+        // nothing
     }
     return self;
 }
@@ -81,6 +81,8 @@
 
 - (IBAction)reloadPressed:(id)sender
 {
+    [self firstPreparing];
+    
     @try {
         // считываем значения полей
         k = self.firstTF.text.integerValue;
@@ -118,6 +120,8 @@
     step = 0.1;
     accuracy = 6;
     scale = 1;
+    buf = 0;
+    integral = 0;
     
     // формируем значения переменных
     for (int i=0; i<([[NSString stringWithFormat:@"%g",(step - floor(step))] length]-2); i++) {
@@ -173,16 +177,23 @@
     NSInteger x = x0;
     WSData *data1, *data2, *data3, *data4;
     
-    NSMutableArray *arr1, *arr2, *arr3, *arr4 = [NSMutableArray array];
-    NSMutableArray *arr1Y, *arr2Y, *arr3Y, *arr4Y = [NSMutableArray array];
+    NSMutableArray *arr1 = [NSMutableArray array];
+    NSMutableArray *arr2 = [NSMutableArray array];
+    NSMutableArray *arr3 = [NSMutableArray array];
+    NSMutableArray *arr4 = [NSMutableArray array];
+    
+    NSMutableArray *arr1Y = [NSMutableArray array];
+    NSMutableArray *arr2Y = [NSMutableArray array];
+    NSMutableArray *arr3Y = [NSMutableArray array];
+    NSMutableArray *arr4Y = [NSMutableArray array];
     
     do {
         // точки графиков
-        //[arr1 addObject:@(x/scale)];
-        //[arr1Y addObject:@(integral/scale)];
+        [arr1 addObject:@(x/scale)];
+        [arr1Y addObject:@(integral/scale)];
         
-        //[arr4 addObject:@(x/scale)];
-        //[arr4Y addObject:@(buf/scale)];
+        [arr4 addObject:@(x/scale)];
+        [arr4Y addObject:@(buf/scale)];
         
         // формула прямоугольников
         int64_t temp = k * dx;
@@ -220,8 +231,6 @@
         [arr4 addObject:[NSNumber numberWithDouble:x/scale]];
         [arr4Y addObject:@(buf/scale)];
         
-        NSLog(@"X : %d, Y : %lld", (x/scale), (buf/scale));
-        
         // переходим к следующей абсциссе
         x += dx;
         
@@ -229,12 +238,12 @@
         [arr3 addObject:@(x/scale)];
         [arr3Y addObject:@(integral/scale - k*(x/scale))];
         
-        //[arr4 addObject:@(x/scale)];
-        //[arr4Y addObject:@(buf/scale)];
+        [arr4 addObject:@(x/scale)];
+        [arr4Y addObject:@(buf/scale)];
         
     } while (x <= xn);
     
-    NSLog(@"arr4 : %@, \narr4Y : %@", arr4, arr4Y);
+    NSLog(@"arr1 = %@, \n\n\narr1Y = %@", arr1, arr1Y);
     
     // формируем данные для графиков
     data1 = [WSData dataWithValues:[NSArray arrayWithArray:arr1Y] valuesX:[NSArray arrayWithArray:arr1]];
@@ -247,35 +256,33 @@
 
 - (NSArray *)trapezoidMethod
 {
-    // TODO:сделать
+    // TODO: сделать
     return [NSArray array];
 }
 
 #pragma mark - Построение графиков
 
 - (void)drawFirstPlot:(NSArray *)dataArr
-{
-    // Наборы данных кривых
-    WSChart *graphics[2];
+{    
+    // Формируем 1 график по данным
+    WSChart *chart = [WSChart linePlotWithFrame:[self.chart1 frame]
+                                        data:dataArr[0]
+                                       style:kChartLineScientific
+                                   axisStyle:kCSGrid
+                                 colorScheme:kColorLight
+                                      labelX:@""
+                                      labelY:@""];
     
-    int i = 0;
+    // Добавляем 2 график на плоскость координат
+    [self.chart1 addPlotsFromChart:chart];    
+    [self.chart1 generateControllerWithData:dataArr[1]
+                                  plotClass:[WSPlotData class]
+                                      frame:self.chart1.frame];
     
-    for (WSData *data_i in dataArr) {
-        // Формируем график по данным
-        graphics[i] = [WSChart linePlotWithFrame:[self.chart1 frame]
-                                            data:data_i
-                                           style:kChartLineGradient
-                                       axisStyle:kCSGrid
-                                     colorScheme:kColorLight
-                                          labelX:@""
-                                          labelY:@""];
-        [graphics[i] setAllAxisLocationToOriginXD];
-        [graphics[i] setAllAxisLocationToOriginYD];
-        
-        // Добавляем графики на плоскость координат
-        [self.chart1 addPlotsFromChart:graphics[i]];
-        i++;
-    }
+    [self.chart1 autoscaleAllAxisX];
+    [self.chart1 autoscaleAllAxisY];
+    [self.chart1 setAllAxisLocationXD:0.0];
+    [self.chart1 setAllAxisLocationYD:0.0];
 }
 
 - (void)drawSecondPlot:(WSData *)data
@@ -283,11 +290,12 @@
     // Формируем график по данным
     WSChart *chart = [WSChart linePlotWithFrame:[self.chart2 frame]
                                            data:data
-                                          style:kChartLineGradient
+                                          style:kChartLineScientific
                                       axisStyle:kCSGrid
                                     colorScheme:kColorLight
                                          labelX:@""
                                          labelY:@""];
+    
     [chart setAllAxisLocationXD:1.328];
     [chart setAllAxisLocationYD:-0.1];
     
@@ -303,7 +311,7 @@
     // Формируем график по данным
     WSChart *chart = [WSChart linePlotWithFrame:[self.chart3 frame]
                                            data:data
-                                          style:kChartLineGradient
+                                          style:kChartLineScientific
                                       axisStyle:kCSGrid
                                     colorScheme:kColorLight
                                          labelX:@""
