@@ -249,8 +249,6 @@
         
     } while (x <= xn);
     
-    NSLog(@"arr1 = %@, \n\n\narr1Y = %@", arr1, arr1Y);
-    
     // формируем данные для графиков
     data1 = [WSData dataWithValues:[NSArray arrayWithArray:arr1Y] valuesX:[NSArray arrayWithArray:arr1]];
     data2 = [WSData dataWithValues:[NSArray arrayWithArray:arr2Y] valuesX:[NSArray arrayWithArray:arr2]];
@@ -262,8 +260,143 @@
 
 - (NSArray *)trapezoidMethod
 {
-    // TODO: сделать
-    return [NSArray array];
+    NSInteger x = x0;
+    WSData *data1, *data2, *data3, *data4;
+    
+    NSMutableArray *arr1 = [NSMutableArray array];
+    NSMutableArray *arr2 = [NSMutableArray array];
+    NSMutableArray *arr3 = [NSMutableArray array];
+    NSMutableArray *arr4 = [NSMutableArray array];
+    
+    NSMutableArray *arr1Y = [NSMutableArray array];
+    NSMutableArray *arr2Y = [NSMutableArray array];
+    NSMutableArray *arr3Y = [NSMutableArray array];
+    NSMutableArray *arr4Y = [NSMutableArray array];
+    
+    // -------------------------------
+    // Расчет первого шага интегратора
+    // -------------------------------
+    
+    // точки графиков
+    [arr1 addObject:@(x/scale)];
+    [arr1Y addObject:@(integral/scale)];
+    
+    [arr4 addObject:@(x/scale)];
+    [arr4Y addObject:@(buf/scale)];
+    
+    // формула прямоугольников
+    int64_t temp = k * dx;
+    
+    // расчет количества разрядов под остаток
+    n = floor(log(k)/log(2)) + 1;
+    
+    if (self.secondSwitch.isOn) {
+        // интегрирование с учетом остатка
+        temp += buf;
+    }
+    
+    // вычисляем новый остаток
+    buf = temp;
+    buf = buf << (64-n); // остаток перешел в старшую часть
+    buf = buf >> (64-n); // остаток перешел в младную часть
+    
+    // отбрасываем остаток от значения интеграла
+    temp = temp >> n;
+    temp = temp << n;
+    
+    // аккумулирование остатка
+    integral += temp;
+    
+    // точки графиков
+    [arr1 addObject:@(x/scale)];
+    [arr1Y addObject:@(integral/scale)];
+    
+    [arr2 addObject:@(x/scale)];
+    [arr2Y addObject:@(y + k*(x/scale))];
+    
+    [arr3 addObject:@(x/scale)];
+    [arr3Y addObject:@(integral/scale - k*(x/scale))];
+    
+    [arr4 addObject:[NSNumber numberWithDouble:x/scale]];
+    [arr4Y addObject:@(buf/scale)];
+    
+    // переходим к следующей абсциссе
+    x += dx;
+    
+    // точки графиков
+    [arr3 addObject:@(x/scale)];
+    [arr3Y addObject:@(integral/scale - k*(x/scale))];
+    
+    [arr4 addObject:@(x/scale)];
+    [arr4Y addObject:@(buf/scale)];
+    
+    // -------------------------------
+    // Расчет второго шага интегратора
+    // -------------------------------
+    
+    do {
+        // точки графиков
+        [arr1 addObject:@(x/scale)];
+        [arr1Y addObject:@(integral/scale)];
+        
+        [arr4 addObject:@(x/scale)];
+        [arr4Y addObject:@(buf/scale)];
+        
+        // формула прямоугольников
+        int64_t temp = k * dx;
+        
+        // расчет количества разрядов под остаток
+        n = floor(log(k)/log(2)) + 1;
+        
+        if (self.secondSwitch.isOn) {
+            // интегрирование с учетом остатка
+            temp += buf;
+        }
+        
+        // вычисляем новый остаток
+        buf = temp;
+        buf = buf << (64-n); // остаток перешел в старшую часть
+        buf = buf >> (64-n); // остаток перешел в младную часть
+        
+        // отбрасываем остаток от значения интеграла
+        temp = temp >> n;
+        temp = temp << n;
+        
+        // аккумулирование остатка
+        integral += temp;
+        
+        // точки графиков
+        [arr1 addObject:@(x/scale)];
+        [arr1Y addObject:@(integral/scale)];
+        
+        [arr2 addObject:@(x/scale)];
+        [arr2Y addObject:@(y + k*(x/scale))];
+        
+        [arr3 addObject:@(x/scale)];
+        [arr3Y addObject:@(integral/scale - k*(x/scale))];
+        
+        [arr4 addObject:[NSNumber numberWithDouble:x/scale]];
+        [arr4Y addObject:@(buf/scale)];
+        
+        // переходим к следующей абсциссе
+        x += dx;
+        
+        // точки графиков
+        [arr3 addObject:@(x/scale)];
+        [arr3Y addObject:@(integral/scale - k*(x/scale))];
+        
+        [arr4 addObject:@(x/scale)];
+        [arr4Y addObject:@(buf/scale)];
+        
+    } while (x <= xn);
+    
+    // формируем данные для графиков
+    data1 = [WSData dataWithValues:[NSArray arrayWithArray:arr1Y] valuesX:[NSArray arrayWithArray:arr1]];
+    data2 = [WSData dataWithValues:[NSArray arrayWithArray:arr2Y] valuesX:[NSArray arrayWithArray:arr2]];
+    data3 = [WSData dataWithValues:[NSArray arrayWithArray:arr3Y] valuesX:[NSArray arrayWithArray:arr3]];
+    data4 = [WSData dataWithValues:[NSArray arrayWithArray:arr4Y] valuesX:[NSArray arrayWithArray:arr4]];
+    
+    return @[data1, data2, data3, data4];
 }
 
 #pragma mark - Построение графиков
@@ -302,11 +435,11 @@
                                          labelX:@""
                                          labelY:@""];
     
-    [chart setAllAxisLocationXD:1.328];
-    [chart setAllAxisLocationYD:-0.1];
-    
     [chart autoscaleAllAxisX];
     [chart autoscaleAllAxisY];
+    
+    [chart setAllAxisLocationXD:0.0];
+    [chart setAllAxisLocationYD:0.0];
     
     // Добавляем графики на плоскость координат
     [self.chart2 addPlotsFromChart:chart];

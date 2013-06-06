@@ -197,7 +197,7 @@
 					<object class="IBUILabel" id="803124762">
 						<reference key="NSNextResponder" ref="246642544"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{130, 403}, {213, 26}}</string>
+						<string key="NSFrame">{{130, 422}, {213, 26}}</string>
 						<reference key="NSSuperview" ref="246642544"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="167933910"/>
@@ -232,7 +232,7 @@
 					<object class="IBUILabel" id="1048688105">
 						<reference key="NSNextResponder" ref="246642544"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{128, 85}, {219, 26}}</string>
+						<string key="NSFrame">{{128, 103}, {219, 26}}</string>
 						<reference key="NSSuperview" ref="246642544"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="687225115"/>
@@ -256,10 +256,9 @@
 					<object class="IBUILabel" id="281232366">
 						<reference key="NSNextResponder" ref="246642544"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{706, 403}, {150, 26}}</string>
+						<string key="NSFrame">{{706, 422}, {150, 26}}</string>
 						<reference key="NSSuperview" ref="246642544"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -546,6 +545,25 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">SecondViewController</string>
 					<string key="superclassName">RootViewController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="nextPressed:">id</string>
+						<string key="prevPressed:">id</string>
+						<string key="reloadPressed:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="nextPressed:">
+							<string key="name">nextPressed:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="prevPressed:">
+							<string key="name">prevPressed:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="reloadPressed:">
+							<string key="name">reloadPressed:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="chart1">WSChart</string>
 						<string key="chart2">WSChart</string>
