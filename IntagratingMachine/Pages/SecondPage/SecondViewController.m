@@ -245,6 +245,8 @@
         sx2+=1;
     }
     
+    NSLog(@"arr1 : %@, \n arr1Y : %@", arr1, arr1Y);
+    
     // формируем данные для графиков
     data1 = [WSData dataWithValues:[NSArray arrayWithArray:arr1Y] valuesX:[NSArray arrayWithArray:arr1]];
     data2 = [WSData dataWithValues:[NSArray arrayWithArray:arr2Y] valuesX:[NSArray arrayWithArray:arr2]];
@@ -266,31 +268,52 @@
 #pragma mark - Построение графиков
 
 - (void)drawFirstPlot:(NSArray *)dataArr
-{
-    // Формируем 1 график по данным
-    WSChart *chart = [WSChart linePlotWithFrame:[self.chart1 frame]
-                                           data:dataArr[0]
-                                          style:kChartLinePlain
-                                      axisStyle:kCSGrid
-                                    colorScheme:kColorLight
-                                         labelX:@""
-                                         labelY:@""];
-    [self.chart1 addPlotsFromChart:chart];
+{    
+    // Формируем оси
+    [self.chart1 generateControllerWithData:nil
+                                 plotClass:[WSPlotAxis class]
+                                     frame:self.chart1.frame];
+    WSPlotAxis *axis = (WSPlotAxis *)[self.chart1 lastPlot].view;
+    
+    // Добавляем 1 график на плоскость координат
+    [self.chart1 generateControllerWithData:dataArr[0]
+                                  plotClass:[WSPlotData class]
+                                      frame:self.chart1.frame];
+    WSPlotData *line1 = (WSPlotData *)[self.chart1 lastPlot].view;
     
     // Добавляем 2 график на плоскость координат
     [self.chart1 generateControllerWithData:dataArr[1]
                                   plotClass:[WSPlotData class]
                                       frame:self.chart1.frame];
+    WSPlotData *line2 = (WSPlotData *)[self.chart1 lastPlot].view;
     
     // Добавляем 3 график на плоскость координат
     [self.chart1 generateControllerWithData:dataArr[2]
                                   plotClass:[WSPlotData class]
                                       frame:self.chart1.frame];
+    WSPlotData *line3 = (WSPlotData *)[self.chart1 lastPlot].view;
+    
+    // Настраиваем
+    axis.axisX.axisStyle = kAxisArrow;
+    axis.axisY.axisStyle = kAxisArrow;
+    [axis.ticksX setTickLabelsWithStrings:@[@"1"]];
+    axis.ticksX.ticksStyle = kTicksLabels;
+    axis.axisStrokeWidth = 2.0;
+    //[axis.ticksY autoTicksWithRange:NARangeMake(0.0, 180.0) number:6];
+    axis.gridStrokeWidth = 1.0;
+    
+    line1.lineColor = [UIColor blackColor];
+    line2.lineColor = [UIColor redColor];
+    line3.lineColor = [UIColor blueColor];
+    
+    line1.propDefault.symbolStyle = kSymbolNone;
+    line2.propDefault.symbolStyle = kSymbolNone;
+    line3.propDefault.symbolStyle = kSymbolNone;
     
     [self.chart1 autoscaleAllAxisX];
     [self.chart1 autoscaleAllAxisY];
-    [self.chart1 setAllAxisLocationXD:0.0];
-    [self.chart1 setAllAxisLocationYD:0.0];
+    [self.chart1 setAllAxisLocationXD:30.f];
+    [self.chart1 setAllAxisLocationYD:200.f];
 }
 
 - (void)drawSecondPlot:(WSData *)data

@@ -156,6 +156,16 @@
     
     NSLog(@"k=%d, y=%d, x0=%d, xn=%d", k, y, x0, xn);
     
+    if (self.secondSwitch.isOn) {
+        // интегрирование с учетом остатка
+        [self.chart2 setHidden:NO];
+        [[self.view viewWithTag:300] setHidden:NO];
+    }
+    else {
+        [self.chart2 setHidden:YES];
+        [[self.view viewWithTag:300] setHidden:YES];
+    }
+    
     NSArray *dataArrays = nil;
     
     if (self.firstSwitch.isOn) {
