@@ -108,6 +108,35 @@
                     completion:NULL];
 }
 
+- (IBAction)sliderChanged:(UISlider*)sender
+{
+    xm = sender.value/1000.0;  // Вычисление нового предела
+    hx=xm/(637-x0);            // Вычисление нового шага
+    
+    // Обновление информации и графиков
+    NSLog(@"xm = %f", xm);
+    NSLog(@"Шаг интегрирования: %f", hx);
+
+    NSArray *dataArrays = nil;
+    
+    @try {
+        dataArrays = [self processIntegrator];
+    }
+    @catch (NSException *exception) {
+        // transform error
+    }
+    
+    // очищаем области координат
+    [self.chart1 removeAllPlots];
+    [self.chart2 removeAllPlots];
+    [self.chart3 removeAllPlots];
+    
+    // рисуем графики
+    [self drawFirstPlot:@[dataArrays[0], dataArrays[1], dataArrays[2]]];
+    [self drawSecondPlot:dataArrays[3]];
+    [self drawThirdPlot:dataArrays[4]];
+}
+
 #pragma mark - Работа с интегратором
 
 - (void)firstPreparing
@@ -128,6 +157,8 @@
     float sx1=x0+xn/hx;
     float sy1=y0-[self f:xn]/hy;
     float sx2=sx1+1;
+    
+    NSLog(@"sy1 : %f,   hy : %f, f(xn) : %f ", sy1, hy, [self f:xn]);
     
     // Переменные прямоугольников
     float ry1=1;
@@ -171,7 +202,7 @@
     for(int i=1; i<=638; i++)
     {        
         // Построение эталона
-        float sy2=y0-[self f:(xn+i*hx)]/hy;        
+        float sy2 = y0 - [self f:(xn+i*hx)]/hy;        
         if (i == 1) {
             [arr1 addObject:@(sx1)];
             [arr1Y addObject:@(sy1)];
@@ -257,12 +288,14 @@
     return @[data1, data2, data3, data4, data5];
 }
 
-// Целевая функция
+// Вычисление целевой функции
 - (float)f:(float)x
 {
     float z=cos(100*M_PI*x);
-    if(z>0) return pow(cos(100*M_PI*x),1.0/3);
-    else return -pow(fabs(cos(100*M_PI*x)),1.0/3);
+    if (z>0)
+        return pow(cos(100*M_PI*x),1.f/3.f);
+    else
+        return -pow(fabs(cos(100*M_PI*x)),1.f/3.f);
 }
 
 #pragma mark - Построение графиков

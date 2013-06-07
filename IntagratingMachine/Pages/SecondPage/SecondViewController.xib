@@ -279,7 +279,7 @@
 					<object class="IBUISlider" id="699107182">
 						<reference key="NSNextResponder" ref="246642544"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{697, 152}, {309, 23}}</string>
+						<string key="NSFrame">{{471, 222}, {535, 23}}</string>
 						<reference key="NSSuperview" ref="246642544"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="770429995"/>
@@ -288,12 +288,14 @@
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<float key="IBUIValue">0.5</float>
+						<float key="IBUIValue">1</float>
+						<float key="IBUIMinValue">1</float>
+						<float key="IBUIMaxValue">1000</float>
 					</object>
 					<object class="IBUILabel" id="120699013">
 						<reference key="NSNextResponder" ref="246642544"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{544, 138}, {138, 50}}</string>
+						<string key="NSFrame">{{642, 164}, {138, 50}}</string>
 						<reference key="NSSuperview" ref="246642544"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="699107182"/>
@@ -398,6 +400,15 @@
 					</object>
 					<int key="connectionID">72</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">sliderChanged:</string>
+						<reference key="source" ref="699107182"/>
+						<reference key="destination" ref="841351856"/>
+						<int key="IBEventType">13</int>
+					</object>
+					<int key="connectionID">81</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -429,11 +440,11 @@
 							<reference ref="770429995"/>
 							<reference ref="1048688105"/>
 							<reference ref="664899926"/>
-							<reference ref="120699013"/>
-							<reference ref="699107182"/>
 							<reference ref="281232366"/>
 							<reference ref="430789315"/>
 							<reference ref="803124762"/>
+							<reference ref="699107182"/>
+							<reference ref="120699013"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -530,7 +541,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">80</int>
+			<int key="maxID">81</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -549,6 +560,7 @@
 						<string key="nextPressed:">id</string>
 						<string key="prevPressed:">id</string>
 						<string key="reloadPressed:">id</string>
+						<string key="sliderChanged:">UISlider</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="nextPressed:">
@@ -562,6 +574,10 @@
 						<object class="IBActionInfo" key="reloadPressed:">
 							<string key="name">reloadPressed:</string>
 							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="sliderChanged:">
+							<string key="name">sliderChanged:</string>
+							<string key="candidateClassName">UISlider</string>
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
