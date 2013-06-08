@@ -9,6 +9,8 @@
 #import "SecondViewController.h"
 #import <math.h>
 
+#define MAX_X 637
+
 @interface SecondViewController ()
 {
     int x0, y0;
@@ -105,7 +107,7 @@
     [self.label1 setText:[NSString stringWithFormat:@"%f", xm]];
     
     // Вычисление нового шага
-    hx=xm/(637-x0);
+    hx=xm/(MAX_X-x0);
     [self.label2 setText:[NSString stringWithFormat:@"%f", hx]];
 
     // Очищаем области координат
@@ -129,7 +131,7 @@
     w = 100*M_PI;       // Циклическая частота
     xn = 0;             // Нижний предел интегрирования
     xm = 0.05;          // Верхний предел интегрирования
-    hx = xm/(637-x0);   // Шаг интегрирования
+    hx = xm/(MAX_X-x0);   // Шаг интегрирования
     hy = [self func:xn]/(y0-2);  // Масштаб графика по Оу
     
     // Визуализация
@@ -147,8 +149,6 @@
     float sx1=x0+xn/hx;
     float sy1=y0-[self func:xn]/hy;
     float sx2=sx1+1;
-    
-    //NSLog(@"sy1 : %f,   hy : %f, f(xn) : %f ", sy1, hy, [self f:xn]);
     
     // Переменные прямоугольников
     float ry1=1;
@@ -266,7 +266,26 @@
         sx2+=1;
     }
     
-    //NSLog(@"arr1 : %@, \n arr1Y : %@", arr1, arr1Y);
+    // трансформация значения абсцисс
+    float koef = MAX_X/xm;
+    NSMutableArray *t_arr = [NSMutableArray array];
+    for (NSNumber *elem in arr1) {
+        [t_arr addObject:@(elem.floatValue / koef)];
+    }    
+    arr1 = [NSArray arrayWithArray:t_arr];
+    arr2 = [NSArray arrayWithArray:t_arr];
+    arr3 = [NSArray arrayWithArray:t_arr];
+    arr4 = [NSArray arrayWithArray:t_arr];
+    arr5 = [NSArray arrayWithArray:t_arr];
+    
+    // трансформация значения ординат
+    NSMutableArray *t_arr_y = [NSMutableArray array];
+    for (NSNumber *elem in arr1Y) {
+        [t_arr_y addObject:@(- elem.floatValue)];
+    }
+    //arr1Y = [NSArray arrayWithArray:t_arr_y];
+    
+    //NSLog(@"%@", arr1Y);
     
     // формируем данные для графиков
     data1 = [WSData dataWithValues:[NSArray arrayWithArray:arr1Y] valuesX:[NSArray arrayWithArray:arr1]];
@@ -292,6 +311,25 @@
 
 - (void)drawFirstPlot:(NSArray *)dataArr
 {    
+    // Формируем график по данным
+    WSChart *chart = [WSChart linePlotWithFrame:[self.chart1 frame]
+                                           data:dataArr[0]
+                                          style:kChartLinePlain
+                                      axisStyle:kCSGrid
+                                    colorScheme:kColorLight
+                                         labelX:@""
+                                         labelY:@""];
+    
+    [chart autoscaleAllAxisX];
+    [chart autoscaleAllAxisY];
+    
+    [chart setAllAxisLocationXD:0.0];
+    [chart setAllAxisLocationYD:0.0];
+    
+    // Добавляем графики на плоскость координат
+    [self.chart1 addPlotsFromChart:chart];
+    
+    /*
     // Формируем оси
     [self.chart1 generateControllerWithData:nil
                                  plotClass:[WSPlotAxis class]
@@ -337,6 +375,7 @@
     [self.chart1 autoscaleAllAxisY];
     [self.chart1 setAllAxisLocationXD:30.f];
     [self.chart1 setAllAxisLocationYD:200.f];
+     */
 }
 
 - (void)drawSecondPlot:(WSData *)data
