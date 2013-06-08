@@ -10,6 +10,7 @@
 #import <math.h>
 
 #define MAX_X 637
+#define MAX_Y 240
 
 @interface SecondViewController ()
 {
@@ -126,8 +127,8 @@
 
 - (void)firstPreparing
 {
-    x0 = 30;          // Позиция начала координат
-    y0 = 240;
+    x0 = 0;          // Позиция начала координат
+    y0 = MAX_Y;
     w = 100*M_PI;       // Циклическая частота
     xn = 0;             // Нижний предел интегрирования
     xm = 0.05;          // Верхний предел интегрирования
@@ -267,25 +268,18 @@
     }
     
     // трансформация значения абсцисс
-    float koef = MAX_X/xm;
-    NSMutableArray *t_arr = [NSMutableArray array];
-    for (NSNumber *elem in arr1) {
-        [t_arr addObject:@(elem.floatValue / koef)];
-    }    
-    arr1 = [NSArray arrayWithArray:t_arr];
-    arr2 = [NSArray arrayWithArray:t_arr];
-    arr3 = [NSArray arrayWithArray:t_arr];
-    arr4 = [NSArray arrayWithArray:t_arr];
-    arr5 = [NSArray arrayWithArray:t_arr];
+    arr1 = [self transformArrX:arr1];
+    arr2 = [self transformArrX:arr2];
+    arr3 = [self transformArrX:arr3];
+    arr4 = [self transformArrX:arr4];
+    arr5 = [self transformArrX:arr5];
     
     // трансформация значения ординат
-    NSMutableArray *t_arr_y = [NSMutableArray array];
-    for (NSNumber *elem in arr1Y) {
-        [t_arr_y addObject:@(- elem.floatValue)];
-    }
-    //arr1Y = [NSArray arrayWithArray:t_arr_y];
-    
-    //NSLog(@"%@", arr1Y);
+    arr1Y = [self transformArrY:arr1Y];
+    arr2Y = [self transformArrY:arr2Y];
+    arr3Y = [self transformArrY:arr3Y];
+    arr4Y = [self transformArrY:arr4Y];
+    arr5Y = [self transformArrY:arr5Y];
     
     // формируем данные для графиков
     data1 = [WSData dataWithValues:[NSArray arrayWithArray:arr1Y] valuesX:[NSArray arrayWithArray:arr1]];
@@ -307,11 +301,32 @@
         return -pow(fabs(cos(100*M_PI*x)),1.f/3.f);
 }
 
+// Трансформация значения абсцисс
+- (NSMutableArray*)transformArrX:(NSMutableArray*)arr
+{
+    float koef = MAX_X/xm;
+    NSMutableArray *t_arr = [NSMutableArray array];
+    for (NSNumber *elem in arr) {
+        [t_arr addObject:@(elem.floatValue / koef)];
+    }
+    return t_arr;
+}
+
+// Трансформация значения ординат
+- (NSMutableArray*)transformArrY:(NSMutableArray*)arr
+{
+    NSMutableArray *t_arr_y = [NSMutableArray array];
+    for (NSNumber *elem in arr) {
+        [t_arr_y addObject:@(-(elem.floatValue - MAX_Y)/MAX_Y)];
+    }
+    return t_arr_y;
+}
+
 #pragma mark - Построение графиков
 
 - (void)drawFirstPlot:(NSArray *)dataArr
-{    
-    // Формируем график по данным
+{
+    // Формируем 1 график по данным
     WSChart *chart = [WSChart linePlotWithFrame:[self.chart1 frame]
                                            data:dataArr[0]
                                           style:kChartLinePlain
@@ -320,62 +335,29 @@
                                          labelX:@""
                                          labelY:@""];
     
-    [chart autoscaleAllAxisX];
-    [chart autoscaleAllAxisY];
-    
-    [chart setAllAxisLocationXD:0.0];
-    [chart setAllAxisLocationYD:0.0];
-    
-    // Добавляем графики на плоскость координат
-    [self.chart1 addPlotsFromChart:chart];
-    
-    /*
-    // Формируем оси
-    [self.chart1 generateControllerWithData:nil
-                                 plotClass:[WSPlotAxis class]
-                                     frame:self.chart1.frame];
-    WSPlotAxis *axis = (WSPlotAxis *)[self.chart1 lastPlot].view;
-    
-    // Добавляем 1 график на плоскость координат
-    [self.chart1 generateControllerWithData:dataArr[0]
-                                  plotClass:[WSPlotData class]
-                                      frame:self.chart1.frame];
-    WSPlotData *line1 = (WSPlotData *)[self.chart1 lastPlot].view;
-    
     // Добавляем 2 график на плоскость координат
+    [self.chart1 addPlotsFromChart:chart];
     [self.chart1 generateControllerWithData:dataArr[1]
                                   plotClass:[WSPlotData class]
                                       frame:self.chart1.frame];
     WSPlotData *line2 = (WSPlotData *)[self.chart1 lastPlot].view;
     
     // Добавляем 3 график на плоскость координат
+    [self.chart1 addPlotsFromChart:chart];
     [self.chart1 generateControllerWithData:dataArr[2]
                                   plotClass:[WSPlotData class]
                                       frame:self.chart1.frame];
     WSPlotData *line3 = (WSPlotData *)[self.chart1 lastPlot].view;
     
-    // Настраиваем
-    axis.axisX.axisStyle = kAxisArrow;
-    axis.axisY.axisStyle = kAxisArrow;
-    [axis.ticksX setTickLabelsWithStrings:@[@"1"]];
-    axis.ticksX.ticksStyle = kTicksLabels;
-    axis.axisStrokeWidth = 2.0;
-    //[axis.ticksY autoTicksWithRange:NARangeMake(0.0, 180.0) number:6];
-    axis.gridStrokeWidth = 1.0;
-    
-    line1.lineColor = [UIColor blackColor];
-    line2.lineColor = [UIColor redColor];
+    line2.lineColor = [UIColor blackColor];
     line3.lineColor = [UIColor blueColor];
-    
-    line1.propDefault.symbolStyle = kSymbolNone;
     line2.propDefault.symbolStyle = kSymbolNone;
     line3.propDefault.symbolStyle = kSymbolNone;
     
     [self.chart1 autoscaleAllAxisX];
     [self.chart1 autoscaleAllAxisY];
-    [self.chart1 setAllAxisLocationXD:30.f];
-    [self.chart1 setAllAxisLocationYD:200.f];
-     */
+    [self.chart1 setAllAxisLocationXD:0.0];
+    [self.chart1 setAllAxisLocationYD:0.0];
 }
 
 - (void)drawSecondPlot:(WSData *)data
