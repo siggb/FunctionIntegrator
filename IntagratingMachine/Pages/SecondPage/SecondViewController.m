@@ -23,21 +23,16 @@
 @property (nonatomic, weak) IBOutlet WSChart *chart2;
 @property (nonatomic, weak) IBOutlet WSChart *chart3;
 
+// Лэйблы
+@property (nonatomic, weak) IBOutlet UILabel *label1;
+@property (nonatomic, weak) IBOutlet UILabel *label2;
+
 @end
 
 
 
 
 @implementation SecondViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        [self firstPreparing];
-    }
-    return self;
-}
 
 #pragma mark - View Lifecicle
 
@@ -52,6 +47,9 @@
     self.chart1 = nil;
     self.chart2 = nil;
     self.chart3 = nil;
+    
+    self.label1 = nil;
+    self.label2 = nil;
 }
 
 #pragma mark - Обработка нажатий
@@ -59,25 +57,17 @@
 - (IBAction)reloadPressed:(id)sender
 {
     [self firstPreparing];
-    NSArray *dataArrays = nil;
     
-    @try {
-        dataArrays = [self processIntegrator];
-    }
-    @catch (NSException *exception) {
-        // transform error
-    }
-    
-    // очищаем области координат
+    // Очищаем области координат
     [self.chart1 removeAllPlots];
     [self.chart2 removeAllPlots];
     [self.chart3 removeAllPlots];
     
-    // рисуем графики
+    // Вычисляем и перерисовываем графики
+    NSArray *dataArrays = [self processIntegrator];
     [self drawFirstPlot:@[dataArrays[0], dataArrays[1], dataArrays[2]]];
     [self drawSecondPlot:dataArrays[3]];
     [self drawThirdPlot:dataArrays[4]];
-
 }
 
 - (IBAction)prevPressed:(id)sender
@@ -110,28 +100,21 @@
 
 - (IBAction)sliderChanged:(UISlider*)sender
 {
-    xm = sender.value/1000.0;  // Вычисление нового предела
-    hx=xm/(637-x0);            // Вычисление нового шага
+    // Вычисление нового предела
+    xm = sender.value/1000.f;
+    [self.label1 setText:[NSString stringWithFormat:@"%f", xm]];
     
-    // Обновление информации и графиков
-    NSLog(@"xm = %f", xm);
-    NSLog(@"Шаг интегрирования: %f", hx);
+    // Вычисление нового шага
+    hx=xm/(637-x0);
+    [self.label2 setText:[NSString stringWithFormat:@"%f", hx]];
 
-    NSArray *dataArrays = nil;
-    
-    @try {
-        dataArrays = [self processIntegrator];
-    }
-    @catch (NSException *exception) {
-        // transform error
-    }
-    
-    // очищаем области координат
+    // Очищаем области координат
     [self.chart1 removeAllPlots];
     [self.chart2 removeAllPlots];
     [self.chart3 removeAllPlots];
     
-    // рисуем графики
+    // Вычисляем и перерисовываем графики
+    NSArray *dataArrays = [self processIntegrator];
     [self drawFirstPlot:@[dataArrays[0], dataArrays[1], dataArrays[2]]];
     [self drawSecondPlot:dataArrays[3]];
     [self drawThirdPlot:dataArrays[4]];
@@ -147,7 +130,14 @@
     xn = 0;             // Нижний предел интегрирования
     xm = 0.05;          // Верхний предел интегрирования
     hx = xm/(637-x0);   // Шаг интегрирования
-    hy = [self f:xn]/(y0-2);  // Масштаб графика по Оу
+    hy = [self func:xn]/(y0-2);  // Масштаб графика по Оу
+    
+    // Визуализация
+    for (int i=100; i<1000; i+=100) {
+        [[self.view viewWithTag:i] setHidden:NO];
+    }
+    [self.label1 setText:[NSString stringWithFormat:@"%f", xm]];
+    [self.label2 setText:[NSString stringWithFormat:@"%f", hx]];
 }
 
 // Вычисление результатов интегрирования
@@ -155,10 +145,10 @@
 {
     // Переменные эталона
     float sx1=x0+xn/hx;
-    float sy1=y0-[self f:xn]/hy;
+    float sy1=y0-[self func:xn]/hy;
     float sx2=sx1+1;
     
-    NSLog(@"sy1 : %f,   hy : %f, f(xn) : %f ", sy1, hy, [self f:xn]);
+    //NSLog(@"sy1 : %f,   hy : %f, f(xn) : %f ", sy1, hy, [self f:xn]);
     
     // Переменные прямоугольников
     float ry1=1;
@@ -170,10 +160,10 @@
     float rdy1=rdy2/(3*ry1*ry1);
     float rdy4=2*ry1*rdy1;
     float rya=ry1;
-    float erry1=y0-fabs(ry1-[self f:xn])/hy;
+    float erry1=y0-fabs(ry1-[self func:xn])/hy;
     
     // Переменные трапеций
-    float ty1=[self f:xn];
+    float ty1=[self func:xn];
     float ty2=cos(w*xn);
     float ty3=sin(w*xn);
     float ty4=ty1*ty1;
@@ -182,7 +172,7 @@
     float tdy1=tdy2/(3*ty1*ty1);
     float tdy4=2*ty1*tdy1;
     float tya=ty1;
-    float erty1=y0-fabs(ry1-[self f:xn])/hy;
+    float erty1=y0-fabs(ry1-[self func:xn])/hy;
     
     // массивы значений
     WSData *data1, *data2, *data3, *data4, *data5;
@@ -202,7 +192,7 @@
     for(int i=1; i<=638; i++)
     {        
         // Построение эталона
-        float sy2 = y0 - [self f:(xn+i*hx)]/hy;        
+        float sy2 = y0 - [self func:(xn+i*hx)]/hy;
         if (i == 1) {
             [arr1 addObject:@(sx1)];
             [arr1Y addObject:@(sy1)];
@@ -276,7 +266,7 @@
         sx2+=1;
     }
     
-    NSLog(@"arr1 : %@, \n arr1Y : %@", arr1, arr1Y);
+    //NSLog(@"arr1 : %@, \n arr1Y : %@", arr1, arr1Y);
     
     // формируем данные для графиков
     data1 = [WSData dataWithValues:[NSArray arrayWithArray:arr1Y] valuesX:[NSArray arrayWithArray:arr1]];
@@ -289,7 +279,7 @@
 }
 
 // Вычисление целевой функции
-- (float)f:(float)x
+- (float)func:(float)x
 {
     float z=cos(100*M_PI*x);
     if (z>0)
