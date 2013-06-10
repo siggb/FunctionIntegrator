@@ -416,7 +416,7 @@
     // Формируем 1 график по данным
     WSChart *chart = [WSChart linePlotWithFrame:[self.chart1 frame]
                                         data:dataArr[0]
-                                       style:kChartLineScientific
+                                       style:kChartLinePlain
                                    axisStyle:kCSGrid
                                  colorScheme:kColorLight
                                       labelX:@""
@@ -439,7 +439,7 @@
     // Формируем график по данным
     WSChart *chart = [WSChart linePlotWithFrame:[self.chart2 frame]
                                            data:data
-                                          style:kChartLineScientific
+                                          style:kChartLineGradient
                                       axisStyle:kCSGrid
                                     colorScheme:kColorLight
                                          labelX:@""
@@ -460,7 +460,7 @@
     // Формируем график по данным
     WSChart *chart = [WSChart linePlotWithFrame:[self.chart3 frame]
                                            data:data
-                                          style:kChartLineScientific
+                                          style:kChartLineGradient
                                       axisStyle:kCSGrid
                                     colorScheme:kColorLight
                                          labelX:@""
