@@ -9,13 +9,18 @@
 #import "ThirdViewController.h"
 #import <math.h>
 
-#define MAX_X 637
-#define MAX_Y 240
+#define MAX_X 637.000000f
+#define MAX_Y 1000000.000000f
+#define ACCURACY 1000000
+
+/**
+ float  [ 3.4e-38  ... 3.4e38 ] 32-bit
+ double [ 1.7e-308 ... 1.7e308] 64-bit
+ */
 
 @interface ThirdViewController ()
 {
-    int x0, y0;
-    float w, xn, xm, hx, hy;
+    float x0, y0, w, xn, xm, hx, hy;
 }
 
 // Контроллеры
@@ -203,7 +208,8 @@
         rdy4=2*ry1*rdy1;
         
         // Построение прямоугольников
-        int ryb=y0-ry1/hy;
+        //int ryb=y0-ry1/hy;
+        long int ryb=lroundf(y0-ry1/hy);        
         if (i == 1) {
             [arr2 addObject:@(sx1)];
             [arr2Y addObject:@(rya)];
@@ -233,7 +239,8 @@
         tdy4=2*(ty1-tdy1/2)*tdy1;
         
         // Построение трапеций
-        int tyb=y0-ty1/hy;
+        //int tyb=y0-ty1/hy;
+        long int tyb=lroundf(y0-ty1/hy);        
         if (i == 1) {
             [arr3 addObject:@(sx1)];
             [arr3Y addObject:@(tya)];
@@ -277,6 +284,16 @@
     data3 = [WSData dataWithValues:[NSArray arrayWithArray:arr3Y] valuesX:[NSArray arrayWithArray:arr3]];
     data4 = [WSData dataWithValues:[NSArray arrayWithArray:arr4Y] valuesX:[NSArray arrayWithArray:arr4]];
     data5 = [WSData dataWithValues:[NSArray arrayWithArray:arr5Y] valuesX:[NSArray arrayWithArray:arr5]];
+    
+    NSLog(@"Ошибки прямоугольников:");
+    for (int i=0; i<arr4.count; i++) {
+        NSLog(@"%e %e", [arr4[i] floatValue], [arr4Y[i] floatValue]);
+    }
+    
+    NSLog(@"\n\nОшибки трапеций:");
+    for (int i=0; i<arr5.count; i++) {
+        NSLog(@"%e %e", [arr5[i] floatValue], [arr5Y[i] floatValue]);
+    }
     
     return @[data1, data2, data3, data4, data5];
 }

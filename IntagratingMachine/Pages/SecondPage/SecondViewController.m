@@ -292,6 +292,16 @@
     data4 = [WSData dataWithValues:[NSArray arrayWithArray:arr4Y] valuesX:[NSArray arrayWithArray:arr4]];
     data5 = [WSData dataWithValues:[NSArray arrayWithArray:arr5Y] valuesX:[NSArray arrayWithArray:arr5]];
     
+    NSLog(@"Ошибки прямоугольников:");
+    for (int i=0; i<arr4.count; i++) {
+        NSLog(@"%e %e", [arr4[i] floatValue], [arr4Y[i] floatValue]);
+    }
+    
+    NSLog(@"\n\nОшибки трапеций:");
+    for (int i=0; i<arr5.count; i++) {
+        NSLog(@"%e %e", [arr5[i] floatValue], [arr5Y[i] floatValue]);
+    }
+    
     return @[data1, data2, data3, data4, data5];
 }
 
