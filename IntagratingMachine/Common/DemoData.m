@@ -1,9 +1,9 @@
 //
 //  DemoData.m
-//  PowerPlot
+//  IntagratingMachine
 //
-//  Created by Wolfram Schroers on 26.10.10.
-//  Copyright 2010 Numerik & Analyse Schroers. All rights reserved.
+//  Created by sig on 29.05.13.
+//  Copyright (c) 2013 sig. All rights reserved.
 //
 
 #import "DemoData.h"

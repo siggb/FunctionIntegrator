@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B626BFB18F894D000EB7EBC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0B626BFA18F894D000EB7EBC /* README.md */; };
 		5806940F1757436D0030F81F /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5806940D1757436D0030F81F /* FirstViewController.m */; };
 		580694101757436D0030F81F /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5806940E1757436D0030F81F /* FirstViewController.xib */; };
 		58069414175743750030F81F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58069412175743750030F81F /* SecondViewController.m */; };
@@ -93,6 +94,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B626BFA18F894D000EB7EBC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		5806940C1757436D0030F81F /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		5806940D1757436D0030F81F /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		5806940E1757436D0030F81F /* FirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 		586EF01217556E27007CB143 = {
 			isa = PBXGroup;
 			children = (
+				0B626BFA18F894D000EB7EBC /* README.md */,
 				586EF02417556E27007CB143 /* IntagratingMachine */,
 				5806941B1757468D0030F81F /* Resources */,
 				586EF04117556EA6007CB143 /* Submodules */,
@@ -605,6 +608,7 @@
 				5806943C17574D7C0030F81F /* btn_slider_international_on@2x.png in Resources */,
 				5806943D17574D7C0030F81F /* btn_slider_off.png in Resources */,
 				5806943E17574D7C0030F81F /* btn_slider_off@2x.png in Resources */,
+				0B626BFB18F894D000EB7EBC /* README.md in Resources */,
 				5806943F17574D7C0030F81F /* btn_slider_on.png in Resources */,
 				5806944017574D7C0030F81F /* btn_slider_on@2x.png in Resources */,
 				5806944117574D7C0030F81F /* btn_slider_thumb.png in Resources */,

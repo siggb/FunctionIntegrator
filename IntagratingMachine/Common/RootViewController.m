@@ -1,8 +1,9 @@
 //
 //  RootViewController.m
+//  IntagratingMachine
 //
-//  Created by tyler on 14.03.13.
-//  Copyright (c) 2012 ru.digipeople. All rights reserved.
+//  Created by sig on 29.05.13.
+//  Copyright (c) 2013 sig. All rights reserved.
 //
 
 #import "RootViewController.h"
@@ -66,7 +67,7 @@
 /*
  * Поворот экрана для ios 6
  */
-- (NSInteger)supportedInterfaceOrientations
+- (NSUInteger)supportedInterfaceOrientations
 {
     return UIInterfaceOrientationMaskAll;
 }
