@@ -22,6 +22,8 @@ Perform calculations estimated parameters of DIS:
 * bit variables and increments for numerical integration formulas rectangles (m = 0) and trapezoids (m = 1) for the requirements of computing functions
 * produce comparative performance evaluation for parallel DIS symmetric and asymmetric forms of SES.
 
+![System of Equations Shannon](https://raw.githubusercontent.com/siggb/FunctionIntegrator/master/IntagratingMachine/Resources/screenshots/IMG_04.png "System of Equations Shannon")![Digital Integration System](https://raw.githubusercontent.com/siggb/FunctionIntegrator/master/IntagratingMachine/Resources/screenshots/IMG_05.png "Digital Integration System")
+
 ### License
 
 Function Integrator is available under the MIT license.
