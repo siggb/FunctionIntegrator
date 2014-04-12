@@ -15,7 +15,7 @@ It is a function integrator for iOS with the variable accuracy. Requires XCode 4
 
 ### Main Idea
 
-For a given function ![Origin Func](https://raw.githubusercontent.com/siggb/FunctionIntegrator/master/IntagratingMachine/Resources/screenshots/IMG_03.png =x30) make SES (System of Equations [Shannon](http://en.wikipedia.org/wiki/Claude_Shannon)) in symmetrical form and write a block diagram of a parallel DIS ([Digital Integration System](http://en.wikipedia.org/wiki/Integrator)) simulating its work process.
+For a given function ![Origin Func](https://raw.githubusercontent.com/siggb/FunctionIntegrator/master/IntagratingMachine/Resources/screenshots/IMG_03.png "Origin Func") make SES (System of Equations [Shannon](http://en.wikipedia.org/wiki/Claude_Shannon)) in symmetrical form and write a block diagram of a parallel DIS ([Digital Integration System](http://en.wikipedia.org/wiki/Integrator)) simulating its work process.
 
 Perform calculations estimated parameters of DIS:
 * integration step
