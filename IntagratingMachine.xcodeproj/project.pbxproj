@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B46201B18F956A900D11F2A /* IMG_04.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B46201918F956A900D11F2A /* IMG_04.png */; };
+		0B46201C18F956A900D11F2A /* IMG_05.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B46201A18F956A900D11F2A /* IMG_05.png */; };
 		0B626BFB18F894D000EB7EBC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0B626BFA18F894D000EB7EBC /* README.md */; };
 		0B626BFF18F89BEB00EB7EBC /* IMG_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B626BFD18F89BEB00EB7EBC /* IMG_01.png */; };
 		0B626C0018F89BEB00EB7EBC /* IMG_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B626BFE18F89BEB00EB7EBC /* IMG_02.png */; };
@@ -97,6 +99,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B46201918F956A900D11F2A /* IMG_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_04.png; sourceTree = "<group>"; };
+		0B46201A18F956A900D11F2A /* IMG_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_05.png; sourceTree = "<group>"; };
 		0B626BFA18F894D000EB7EBC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		0B626BFD18F89BEB00EB7EBC /* IMG_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_01.png; sourceTree = "<group>"; };
 		0B626BFE18F89BEB00EB7EBC /* IMG_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_02.png; sourceTree = "<group>"; };
@@ -278,6 +282,8 @@
 				0B626BFD18F89BEB00EB7EBC /* IMG_01.png */,
 				0B626BFE18F89BEB00EB7EBC /* IMG_02.png */,
 				0B86AF8518F9518A00F60D7A /* IMG_03.png */,
+				0B46201918F956A900D11F2A /* IMG_04.png */,
+				0B46201A18F956A900D11F2A /* IMG_05.png */,
 			);
 			path = screenshots;
 			sourceTree = "<group>";
@@ -618,6 +624,7 @@
 				580694101757436D0030F81F /* FirstViewController.xib in Resources */,
 				0B626C0018F89BEB00EB7EBC /* IMG_02.png in Resources */,
 				58069415175743750030F81F /* SecondViewController.xib in Resources */,
+				0B46201B18F956A900D11F2A /* IMG_04.png in Resources */,
 				5806941A1757437E0030F81F /* ThirdViewController.xib in Resources */,
 				5806941E1757468D0030F81F /* arrow_left.png in Resources */,
 				5806941F1757468D0030F81F /* arrow_right.png in Resources */,
@@ -639,6 +646,7 @@
 				5806944617574D7C0030F81F /* btn_slider_track@2x.png in Resources */,
 				5806944717574D7C0030F81F /* btn_slider_track_pressed.png in Resources */,
 				5806944817574D7C0030F81F /* btn_slider_track_pressed@2x.png in Resources */,
+				0B46201C18F956A900D11F2A /* IMG_05.png in Resources */,
 				5806944D175751AE0030F81F /* brain.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
